@@ -1,15 +1,12 @@
-
 import { Building, Target, Award } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-
 const AboutSection = () => {
-  return (
-    <section id="quemsomos" className="bg-gradient-to-b from-gray-50 to-white py-20">
+  return <section id="quemsomos" className="bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="section-container">
         <h2 className="section-title">Quem somos?</h2>
         <div className="max-w-3xl mx-auto mb-12 flex flex-col items-center">
           <Avatar className="w-40 h-40 mb-8 ring-4 ring-brand-green/30 shadow-xl">
-            <AvatarImage src="/lovable-uploads/00eb0889-55e8-458e-a643-34b403bee317.png" alt="Fundadora da Única Soluções" />
+            <AvatarImage alt="Fundadora da Única Soluções" src="/lovable-uploads/d1272c66-8220-4975-8324-ac2645ad6a82.jpg" />
             <AvatarFallback>ÚS</AvatarFallback>
           </Avatar>
           <p className="text-center text-lg text-gray-700 mb-6">
@@ -56,8 +53,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
