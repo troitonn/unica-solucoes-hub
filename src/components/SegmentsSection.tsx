@@ -21,7 +21,7 @@ const SegmentsSection = () => {
   ];
 
   return (
-    <section id="segmentos" className="bg-gradient-to-br from-brand-blue via-brand-blue to-brand-blue/90 py-20 text-white relative overflow-hidden">
+    <section id="segmentos" className="bg-gradient-to-br from-brand-blue/95 via-brand-blue to-brand-blue/90 py-20 text-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute -top-[10%] -left-[5%] w-96 h-96 bg-brand-green/10 rounded-full blur-3xl"></div>

@@ -17,7 +17,9 @@ const Index = () => {
         <Navbar />
         <Hero />
         <AboutSection />
-        <ServicesSection />
+        <div className="bg-gradient-to-b from-white via-gray-50 to-brand-blue/5">
+          <ServicesSection />
+        </div>
         <SegmentsSection />
         <ContactForm />
         <Footer />

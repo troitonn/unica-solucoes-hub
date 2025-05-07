@@ -1,5 +1,7 @@
-import { Building, Target, Award } from "lucide-react";
+
+import { Building, Target, Award, Instagram, Linkedin, Facebook, MessageCircle } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
 const AboutSection = () => {
   return <section id="quemsomos" className="bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="section-container">
@@ -13,6 +15,27 @@ const AboutSection = () => {
             A Única Soluções nasceu das necessidades dos nossos clientes. Nossos serviços atendem às empresas de vários 
             nichos, sendo pequeno, médio porte. Estamos preparados! Agregamos valor ao seu negócio! Nada é tão precioso quanto o seu tempo.
           </p>
+          
+          {/* Social Media Icons */}
+          <div className="flex space-x-4 mt-4">
+            <a href="https://www.instagram.com/somosaunica/" target="_blank" rel="noopener noreferrer" 
+               className="bg-gradient-to-br from-brand-blue to-brand-blue/80 p-3 rounded-full text-white hover:scale-110 transition-all duration-300">
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a href="https://www.linkedin.com/company/somosaunica" target="_blank" rel="noopener noreferrer"
+               className="bg-gradient-to-br from-brand-blue to-brand-blue/80 p-3 rounded-full text-white hover:scale-110 transition-all duration-300">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href="https://www.facebook.com/somosaunica" target="_blank" rel="noopener noreferrer"
+               className="bg-gradient-to-br from-brand-blue to-brand-blue/80 p-3 rounded-full text-white hover:scale-110 transition-all duration-300">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5521972145721&text=Ol%C3%A1%20%C3%9Anica,%20eu%20vim%20no%20site%20e%20quero%20saber%20mais" 
+               target="_blank" rel="noopener noreferrer"
+               className="bg-gradient-to-br from-brand-green to-brand-green/80 p-3 rounded-full text-white hover:scale-110 transition-all duration-300">
+              <MessageCircle className="h-5 w-5" />
+            </a>
+          </div>
         </div>
           
         <div className="mt-12 grid md:grid-cols-3 gap-8">
