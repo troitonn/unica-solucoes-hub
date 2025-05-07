@@ -9,6 +9,8 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-brand-green/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[20%] right-[10%] w-72 h-72 bg-brand-green/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-[40%] right-[30%] w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-[10%] left-[20%] w-56 h-56 bg-white/5 rounded-full blur-2xl"></div>
       </div>
       
       <div className="section-container flex flex-col md:flex-row items-center relative z-10">
@@ -23,16 +25,16 @@ const Hero = () => {
             Tem coisas que só a Única faz!
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Button size="lg" className="bg-gradient-to-r from-brand-green to-brand-green/80 hover:opacity-90 text-white border-none shadow-lg shadow-brand-green/20">
+            <Button size="lg" className="bg-gradient-to-r from-brand-green to-brand-green/80 hover:opacity-90 text-white border-none shadow-lg shadow-brand-green/20 hover:shadow-xl hover:scale-105 transition-all duration-300">
               Nossos Serviços <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20">
+            <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 hover:scale-105 transition-all duration-300">
               Contate-nos
             </Button>
           </div>
         </div>
         <div className="md:w-1/2 mt-10 md:mt-0 animate-slide-up">
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20">
+          <div className="glass-card p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all duration-300">
             <div className="grid grid-cols-2 gap-4">
               {[
                 "PONTO ELETRÔNICO",
@@ -46,7 +48,7 @@ const Hero = () => {
               ].map((service, index) => (
                 <div 
                   key={index}
-                  className="bg-white/5 hover:bg-gradient-to-br hover:from-brand-green/30 hover:to-brand-green/10 transition-all duration-300 p-4 rounded-lg text-center text-sm font-medium border border-white/10"
+                  className="bg-white/5 hover:bg-gradient-to-br hover:from-brand-green/30 hover:to-brand-green/10 transition-all duration-300 p-4 rounded-lg text-center text-sm font-medium border border-white/10 hover:border-white/30 hover:-translate-y-1 hover:shadow-md"
                 >
                   {service}
                 </div>
@@ -56,10 +58,10 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Wave separator */}
-      <div className="absolute -bottom-1 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-full">
-          <path fill="#ffffff" fillOpacity="1" d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,181.3C960,181,1056,139,1152,138.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      {/* Modern wave separator */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#ffffff"></path>
         </svg>
       </div>
     </div>

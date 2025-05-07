@@ -36,7 +36,7 @@ const SegmentsSection = () => {
           {segments.map((segment, index) => (
             <div 
               key={index}
-              className="bg-white/10 backdrop-blur-md hover:bg-gradient-to-br hover:from-brand-green/30 hover:to-brand-green/10 transition-all duration-300 p-5 rounded-xl text-center flex items-center justify-center h-28 border border-white/10 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="glass-card hover:bg-gradient-to-br hover:from-brand-green/30 hover:to-brand-green/10 transition-all duration-300 p-5 rounded-xl text-center flex items-center justify-center h-28 border border-white/10 hover:border-white/30 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <span className="text-lg font-medium">{segment}</span>
             </div>
@@ -44,10 +44,10 @@ const SegmentsSection = () => {
         </div>
       </div>
 
-      {/* Wave separator */}
-      <div className="absolute -bottom-1 left-0 right-0 h-16">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-full">
-          <path fill="#ffffff" fillOpacity="1" d="M0,64L48,80C96,96,192,128,288,138.7C384,149,480,139,576,144C672,149,768,171,864,176C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      {/* Modern wave separator */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
         </svg>
       </div>
     </section>

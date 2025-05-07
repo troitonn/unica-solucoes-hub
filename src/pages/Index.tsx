@@ -10,13 +10,18 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      <Hero />
-      <AboutSection />
-      <ServicesSection />
-      <SegmentsSection />
-      <ContactForm />
-      <Footer />
+      <div className="gradient-background fixed top-0 left-0 w-full h-full z-0">
+        <div className="absolute top-0 left-0 w-full h-screen bg-gradient-to-br from-brand-blue to-brand-blue/90 opacity-100"></div>
+      </div>
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <AboutSection />
+        <ServicesSection />
+        <SegmentsSection />
+        <ContactForm />
+        <Footer />
+      </div>
     </div>
   );
 };

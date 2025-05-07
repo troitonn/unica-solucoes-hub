@@ -31,3 +31,56 @@
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Modern wave dividers */
+.wave-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-bottom {
+  bottom: -1px;
+}
+
+.wave-top {
+  top: -1px;
+  transform: rotate(180deg);
+}
+
+/* Enhanced glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Modern gradient backgrounds */
+.bg-gradient-modern-blue {
+  background: linear-gradient(135deg, #052e46 0%, #104c75 100%);
+}
+
+.bg-gradient-modern-green {
+  background: linear-gradient(135deg, #1e9d63 0%, #2da66d 100%);
+}
+
+/* Enhanced glowing effects */
+.glow {
+  box-shadow: 0 0 15px rgba(45, 166, 109, 0.5);
+}
+
+.glow-blue {
+  box-shadow: 0 0 15px rgba(5, 46, 70, 0.5);
+}
