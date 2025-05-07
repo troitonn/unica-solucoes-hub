@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -25,11 +25,24 @@ const Hero = () => {
             Tem coisas que só a Única faz!
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Button size="lg" className="bg-gradient-to-r from-brand-green to-brand-green/80 hover:opacity-90 text-white border-none shadow-lg shadow-brand-green/20 hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-brand-green to-brand-green/80 hover:opacity-90 text-white border-none shadow-lg shadow-brand-green/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
+              onClick={() => {
+                document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Nossos Serviços <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 hover:scale-105 transition-all duration-300">
-              Contate-nos
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 hover:scale-105 transition-all duration-300"
+              onClick={() => {
+                window.open("https://wa.me/5521972145721", "_blank");
+              }}
+            >
+              <MessageSquare className="mr-2 h-5 w-5" /> WhatsApp
             </Button>
           </div>
         </div>

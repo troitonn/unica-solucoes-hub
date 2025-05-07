@@ -2,11 +2,10 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import { ArrowRight } from "lucide-react";
 
 const services = [
   "Ponto Eletrônico",
@@ -28,7 +27,6 @@ const ContactForm = () => {
     phone: '',
     services: {} as Record<string, boolean>,
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -50,26 +48,46 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    // Simulate API call
+    // Get selected services
+    const selectedServices = Object.keys(formData.services)
+      .filter(key => formData.services[key])
+      .join(", ");
+    
+    // Create message for WhatsApp
+    const message = `Olá, meu nome é *${formData.name}*${formData.company ? ` da empresa *${formData.company}*` : ''}.\n\nGostaria de saber mais sobre os serviços: *${selectedServices}*.\n\nMeus contatos:\nEmail: ${formData.email}\nTelefone: ${formData.phone}`;
+    
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // WhatsApp API URL
+    const whatsappUrl = `https://wa.me/5521972145721?text=${encodedMessage}`;
+    
+    // Show toast
+    toast({
+      title: "Redirecionando para WhatsApp",
+      description: "Você será redirecionado para o WhatsApp em instantes.",
+    });
+    
+    // Open WhatsApp in a new tab
     setTimeout(() => {
-      toast({
-        title: "Formulário enviado!",
-        description: "Entraremos em contato em breve.",
-      });
-      setIsSubmitting(false);
-      
-      // Reset form
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        services: {},
-      });
+      window.open(whatsappUrl, '_blank');
     }, 1000);
+    
+    // Reset form
+    setFormData({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      services: {},
+    });
   };
+
+  // Check if any service is selected
+  const isAnyServiceSelected = Object.values(formData.services).some(value => value);
+  // Check if form is valid
+  const isFormValid = formData.name && formData.email && formData.phone && isAnyServiceSelected;
 
   return (
     <section id="contato" className="py-16 bg-gray-50">
@@ -86,7 +104,14 @@ const ContactForm = () => {
               
               <div className="mt-auto pt-8">
                 <h4 className="font-semibold text-xl mb-2">Contato Direto</h4>
-                <p className="mb-1">(21) 97214-5721</p>
+                <Button 
+                  className="bg-gradient-to-r from-brand-green to-brand-green/90 hover:from-brand-green/90 hover:to-brand-green text-white hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2 mt-2"
+                  onClick={() => {
+                    window.open("https://wa.me/5521972145721", "_blank");
+                  }}
+                >
+                  <MessageSquare size={16} /> (21) 97214-5721
+                </Button>
               </div>
             </div>
             
@@ -109,8 +134,7 @@ const ContactForm = () => {
                     id="company" 
                     name="company" 
                     value={formData.company} 
-                    onChange={handleChange} 
-                    required
+                    onChange={handleChange}
                   />
                 </div>
                 
@@ -162,11 +186,11 @@ const ContactForm = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-brand-green hover:bg-brand-blue text-white"
-                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-brand-green to-brand-green/90 hover:from-brand-green/90 hover:to-brand-green text-white flex items-center justify-center gap-2"
+                  disabled={!isFormValid}
                 >
-                  {isSubmitting ? 'Enviando...' : 'EU QUERO'} 
-                  {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
+                  ENVIAR PARA WHATSAPP
+                  <MessageSquare className="ml-2 h-4 w-4" />
                 </Button>
               </form>
             </div>

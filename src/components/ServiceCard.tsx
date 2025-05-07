@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { ReactNode } from "react";
 
 interface ServiceCardProps {
@@ -44,9 +44,17 @@ const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }:
         </div>
         
         <div>
-          <Button variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white group">
-            SABER MAIS
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          <Button 
+            variant="outline" 
+            className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white group"
+            onClick={() => {
+              // Redirect to WhatsApp with pre-filled message about the service
+              const message = encodeURIComponent(`Olá! Gostaria de saber mais sobre o serviço "${title}" oferecido pela Única Soluções.`);
+              window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
+            }}
+          >
+            CONTATO VIA WHATSAPP
+            <MessageSquare className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
       </div>
