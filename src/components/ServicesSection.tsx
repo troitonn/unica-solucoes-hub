@@ -63,7 +63,9 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-16">
+    <section id="servicos" className="py-16 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
+      
       <div className="section-container">
         <h2 className="section-title">Nossos Serviços</h2>
         <p className="section-subtitle">
@@ -83,6 +85,8 @@ const ServicesSection = () => {
           ))}
         </div>
       </div>
+      
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-brand-blue/10 z-10"></div>
     </section>
   );
 };
