@@ -25,7 +25,7 @@ const SegmentsSection = () => {
       {/* Improved gradient transition from ServicesSection */}
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white/30 to-transparent"></div>
       
-      {/* Decorative elements with enhanced animation */}
+      {/* Enhanced decorative elements with better animation */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute -top-[10%] -left-[5%] w-96 h-96 bg-brand-green/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-[20%] -right-[10%] w-80 h-80 bg-brand-green/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
@@ -40,7 +40,11 @@ const SegmentsSection = () => {
             <div 
               key={index}
               className="glass-card hover:bg-gradient-to-br hover:from-brand-green/30 hover:to-brand-green/10 transition-all duration-500 p-5 rounded-xl text-center flex items-center justify-center h-28 border border-white/10 hover:border-white/30 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              style={{ transitionDelay: `${index * 50}ms` }}
+              style={{ 
+                transitionDelay: `${index * 50}ms`,
+                opacity: 0,
+                animation: `fade-in 0.5s ease-out forwards ${index * 0.1}s`
+              }}
             >
               <span className="text-lg font-medium">{segment}</span>
             </div>

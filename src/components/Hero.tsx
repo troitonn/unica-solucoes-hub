@@ -11,6 +11,10 @@ const Hero = () => {
         <div className="absolute bottom-[20%] right-[10%] w-72 h-72 bg-brand-green/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s' }}></div>
         <div className="absolute top-[40%] right-[30%] w-48 h-48 bg-white/5 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '15s' }}></div>
         <div className="absolute bottom-[10%] left-[20%] w-56 h-56 bg-white/5 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '20s' }}></div>
+        
+        {/* Additional subtle animated elements */}
+        <div className="absolute top-[60%] left-[40%] w-40 h-40 bg-brand-green/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '12s' }}></div>
+        <div className="absolute top-[25%] right-[15%] w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '18s' }}></div>
       </div>
       
       <div className="section-container flex flex-col md:flex-row items-center relative z-10">
@@ -18,7 +22,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Somos a <span className="text-brand-green bg-gradient-to-r from-brand-green to-teal-400 bg-clip-text text-transparent">Única</span>, uma empresa que nasceu por você e para você!
           </h1>
-          <p className="text-lg md:text-xl text-white/90">
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed">
             Otimize seus processos com praticidade e segurança, garantido mais tempo para o seu negócio! Deixe a burocracia com a gente.
           </p>
           <p className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-brand-green to-teal-300 bg-clip-text text-transparent">
@@ -47,7 +51,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="md:w-1/2 mt-10 md:mt-0 animate-slide-up">
-          <div className="glass-card p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all duration-500">
+          <div className="glass-card p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all duration-500 transform hover:translate-y-[-5px]">
             <div className="grid grid-cols-2 gap-4">
               {[
                 "PONTO ELETRÔNICO",
