@@ -63,9 +63,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-16 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
-      
+    <section id="servicos" className="py-16 bg-white relative">
       <div className="section-container">
         <h2 className="section-title">Nossos Serviços</h2>
         <p className="section-subtitle">
@@ -87,8 +85,8 @@ const ServicesSection = () => {
         </div>
       </div>
       
-      {/* Enhanced gradient transition to the SegmentsSection */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent via-brand-blue/5 to-brand-blue/20 z-10"></div>
+      {/* Smoother transition to the SegmentsSection */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-white via-white to-brand-blue/5"></div>
     </section>
   );
 };

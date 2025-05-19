@@ -38,7 +38,7 @@ const Navbar = () => {
       {/* Scroll progress indicator */}
       <div className="scroll-progress fixed top-0 left-0 z-50 h-1" style={{ width: `${scrollProgress}%` }}></div>
       
-      <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass shadow-md py-2' : 'bg-transparent py-4'}`}>
+      <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-brand-blue/90 backdrop-blur-sm py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <img 
                   src="/lovable-uploads/36af4156-5046-46f9-bcf0-89cf8ceff89b.png" 
                   alt="Única Soluções Logo" 
-                  className="h-16 w-auto" 
+                  className={`h-16 w-auto ${scrolled ? '' : 'brightness-0 invert'}`} 
                 />
               </a>
             </div>
@@ -96,7 +96,7 @@ const Navbar = () => {
         
         {/* Enhanced mobile menu with animations */}
         {isOpen && (
-          <div className="md:hidden glass backdrop-blur-md border-t border-white/10 animate-fade-in">
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 animate-fade-in shadow-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {[
                 { name: "Serviços", href: "#servicos" },
@@ -107,7 +107,7 @@ const Navbar = () => {
                 <a 
                   key={item.name}
                   href={item.href} 
-                  className={`block px-3 py-2 text-base font-medium ${scrolled ? 'text-brand-blue' : 'text-white'} hover:bg-white/10 hover:text-brand-green rounded-md transition-all duration-300`}
+                  className="block px-3 py-2 text-base font-medium text-brand-blue hover:bg-gray-50 hover:text-brand-green rounded-md transition-all duration-300"
                   onClick={toggleMenu}
                   style={{ 
                     opacity: 0, 
