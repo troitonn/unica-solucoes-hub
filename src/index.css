@@ -91,13 +91,8 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-  }
-
   body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    @apply bg-background text-foreground font-sans;
   }
 
   .section-container {
@@ -110,14 +105,5 @@
   
   .section-subtitle {
     @apply text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto;
-  }
-
-  .wave-transition {
-    @apply transition-all duration-500;
-  }
-  
-  /* Smooth scroll for anchor links */
-  a[href^="#"] {
-    scroll-behavior: smooth;
   }
 }

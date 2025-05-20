@@ -13,9 +13,9 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }: ServiceCardProps) => {
   return (
-    <div className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} bg-white rounded-xl shadow-lg overflow-hidden mb-12 hover-lift`}>
-      <div className="md:w-1/2 overflow-hidden">
-        <div className="h-full bg-gray-200 flex items-center justify-center transform transition-transform duration-700 hover:scale-105">
+    <div className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} bg-white rounded-xl shadow-lg overflow-hidden mb-12 animate-fade-in`}>
+      <div className="md:w-1/2">
+        <div className="h-full bg-gray-200 flex items-center justify-center">
           {imageUrl ? (
             <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
           ) : (
@@ -30,7 +30,7 @@ const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }:
       
       <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
         <div>
-          <div className="inline-flex items-center justify-center bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 p-3 rounded-full mb-4 shadow-sm">
+          <div className="inline-flex items-center justify-center bg-brand-blue/10 p-3 rounded-full mb-4">
             <div className="text-brand-blue">
               {icon}
             </div>
@@ -39,14 +39,14 @@ const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }:
           <h3 className="text-2xl font-bold text-brand-blue mb-4">{title}</h3>
           
           <div className="text-gray-600 mb-6">
-            <p className="mb-4 leading-relaxed">{description}</p>
+            <p className="mb-4">{description}</p>
           </div>
         </div>
         
         <div>
           <Button 
             variant="outline" 
-            className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white group transition-all duration-300"
+            className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white group"
             onClick={() => {
               // Redirect to WhatsApp with pre-filled message about the service
               const message = encodeURIComponent(`Olá! Gostaria de saber mais sobre o serviço "${title}" oferecido pela Única Soluções.`);
