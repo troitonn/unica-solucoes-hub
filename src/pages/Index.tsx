@@ -33,7 +33,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
-      {/* Background gradient only applied to the hero section */}
+      <div className="gradient-background fixed top-0 left-0 w-full h-full z-0">
+        <div className="absolute top-0 left-0 w-full h-screen bg-gradient-to-br from-brand-blue to-brand-blue/90 opacity-100"></div>
+      </div>
       <div className="relative z-10">
         <Navbar />
         <div className="section-wrapper transition-all duration-500">
@@ -42,7 +44,7 @@ const Index = () => {
         <div className="section-wrapper transition-all duration-500">
           <AboutSection />
         </div>
-        <div className="section-wrapper transition-all duration-500">
+        <div className="section-wrapper bg-gradient-to-b from-white via-gray-50 to-brand-blue/5 transition-all duration-500">
           <ServicesSection />
         </div>
         <div className="section-wrapper transition-all duration-500">

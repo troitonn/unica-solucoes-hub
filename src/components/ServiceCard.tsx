@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { ReactNode } from "react";
 
 interface ServiceCardProps {
@@ -13,14 +13,14 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }: ServiceCardProps) => {
   return (
-    <div className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} bg-white rounded-lg shadow-md overflow-hidden mb-12 border border-gray-100`}>
+    <div className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} bg-white rounded-xl shadow-lg overflow-hidden mb-12 hover-lift`}>
       <div className="md:w-1/2 overflow-hidden">
-        <div className="h-full bg-gray-100 flex items-center justify-center">
+        <div className="h-full bg-gray-200 flex items-center justify-center transform transition-transform duration-700 hover:scale-105">
           {imageUrl ? (
-            <img src={imageUrl} alt={title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+            <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
           ) : (
-            <div className="bg-gray-50 w-full h-full flex items-center justify-center p-8">
-              <div className="text-brand-blue/50 w-32 h-32">
+            <div className="bg-brand-blue/5 w-full h-full flex items-center justify-center p-8">
+              <div className="text-brand-blue/30 w-32 h-32">
                 {icon}
               </div>
             </div>
@@ -30,7 +30,7 @@ const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }:
       
       <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
         <div>
-          <div className="inline-flex items-center justify-center bg-brand-blue/10 p-3 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 p-3 rounded-full mb-4 shadow-sm">
             <div className="text-brand-blue">
               {icon}
             </div>
@@ -38,7 +38,7 @@ const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }:
           
           <h3 className="text-2xl font-bold text-brand-blue mb-4">{title}</h3>
           
-          <div className="text-gray-700 mb-6">
+          <div className="text-gray-600 mb-6">
             <p className="mb-4 leading-relaxed">{description}</p>
           </div>
         </div>
@@ -46,7 +46,7 @@ const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }:
         <div>
           <Button 
             variant="outline" 
-            className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300"
+            className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white group transition-all duration-300"
             onClick={() => {
               // Redirect to WhatsApp with pre-filled message about the service
               const message = encodeURIComponent(`Olá! Gostaria de saber mais sobre o serviço "${title}" oferecido pela Única Soluções.`);
@@ -54,7 +54,7 @@ const ServiceCard = ({ title, description, icon, imageUrl, isReversed = false }:
             }}
           >
             CONTATO VIA WHATSAPP
-            <MessageSquare className="ml-2 h-4 w-4" />
+            <MessageSquare className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
       </div>
