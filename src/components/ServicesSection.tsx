@@ -63,7 +63,9 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-16">
+    <section id="servicos" className="py-16 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
+      
       <div className="section-container">
         <h2 className="section-title">Nossos Serviços</h2>
         <p className="section-subtitle">
@@ -72,17 +74,21 @@ const ServicesSection = () => {
         
         <div className="mt-16">
           {services.map((service, index) => (
-            <ServiceCard 
-              key={index}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              isReversed={service.isReversed}
-              imageUrl={service.imageUrl}
-            />
+            <div key={index} className="opacity-0" style={{ animation: `fade-in 0.8s ease-out forwards ${index * 0.2}s` }}>
+              <ServiceCard 
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                isReversed={service.isReversed}
+                imageUrl={service.imageUrl}
+              />
+            </div>
           ))}
         </div>
       </div>
+      
+      {/* Enhanced gradient transition to the SegmentsSection */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent via-brand-blue/5 to-brand-blue/20 z-10"></div>
     </section>
   );
 };
