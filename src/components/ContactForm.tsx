@@ -77,7 +77,7 @@ const ContactForm = () => {
   // Check if form is valid
   const isFormValid = formData.name && formData.email && formData.phone && isAnyServiceSelected;
   return <section id="contato" className="py-16 bg-gray-50">
-      <div className="section-container">
+      <div className="section-container my-0 py-[22px]">
         <div className="bg-white shadow-xl rounded-2xl overflow-hidden max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2">
             <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
