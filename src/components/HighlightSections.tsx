@@ -1,5 +1,5 @@
 
-import { AlertTriangle, Clock, CreditCard, FileKey } from "lucide-react";
+import { AlertTriangle, Clock, CreditCard, FileKey, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HighlightSections = () => {
