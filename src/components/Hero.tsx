@@ -148,7 +148,7 @@ const Hero = () => {
                 }} onClick={() => {
                   const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${service.name}`);
                   window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
-                }} className="group p-4 bg-gradient-to-br from-brand-accent/10 to-transparent border border-brand-accent/20 hover:border-brand-accent/40 hover:bg-brand-accent/5 transform hover:scale-105 transition-all duration-300 cursor-pointer rounded-none">
+                }} className="group w-40 h-40 p-4 bg-gradient-to-br from-brand-accent/30 to-transparent border border-brand-accent/20 hover:border-brand-accent/40 hover:bg-brand-accent/5 transform hover:scale- transition-all duration-3 cursor-pointer rounded-full flex items-center justify-center">
                       <div className="text-center">
                         <div className="text-2xl mb-2">{service.icon}</div>
                         <div className="text-xs font-semibold text-white group-hover:text-brand-accent transition-colors">
