@@ -1,16 +1,7 @@
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  MessageSquare,
-  Zap,
-  Shield,
-  Users,
-  Clock,
-} from "lucide-react";
-
+import { ArrowRight, MessageSquare, Zap, Shield, Users, Clock } from "lucide-react";
 const Hero = () => {
-  return (
-    <section className="hero-section min-h-screen flex items-center pt-20 pb-16 relative">
+  return <section className="hero-section min-h-screen flex items-center pt-20 pb-16 relative">
       {/* Background elements */}
       <div className="absolute inset-0 tech-grid-bg opacity-20"></div>
       <div className="absolute top-1/4 left-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl"></div>
@@ -21,7 +12,7 @@ const Hero = () => {
           {/* Conteúdo principal */}
           <div className="space-y-8 animate-slide-in">
             {/* Badge inovador */}
-            <div className="flex items-center gap-4">
+            <div className="">
               <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm rounded-full">
                 <Zap className="h-5 w-5 mr-2 floating-icon" />
                 <span className="font-semibold">Inovação em cada solução</span>
@@ -91,26 +82,18 @@ const Hero = () => {
 
             {/* CTAs principais */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Button
-                size="lg"
-                className="btn-primary group text-lg px-8 py-4"
-                onClick={() => {
-                  document.getElementById("servicos")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-              >
+              <Button size="lg" className="btn-primary group text-lg px-8 py-4" onClick={() => {
+              document.getElementById("servicos")?.scrollIntoView({
+                behavior: "smooth"
+              });
+            }}>
                 Descobrir Soluções
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
 
-              <Button
-                size="lg"
-                className="btn-outline group text-lg px-8 py-4"
-                onClick={() => {
-                  window.open("https://wa.me/5521972145721", "_blank");
-                }}
-              >
+              <Button size="lg" className="btn-outline group text-lg px-8 py-4" onClick={() => {
+              window.open("https://wa.me/5521972145721", "_blank");
+            }}>
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Falar Conosco
               </Button>
@@ -118,12 +101,9 @@ const Hero = () => {
           </div>
 
           {/* Área visual dos serviços modernizada */}
-          <div
-            className="animate-slide-in relative"
-            style={{
-              animationDelay: "0.3s",
-            }}
-          >
+          <div className="animate-slide-in relative" style={{
+          animationDelay: "0.3s"
+        }}>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/20 to-transparent rounded-3xl blur-xl"></div>
               <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
@@ -137,51 +117,51 @@ const Hero = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { name: "PONTO ELETRÔNICO", icon: "⏰" },
-                    { name: "AUDITORIA DE CARTÕES", icon: "💳" },
-                    { name: "REVISÃO TRIBUTÁRIA", icon: "📊" },
-                    { name: "SISTEMA DE COTAÇÃO", icon: "💰" },
-                    { name: "CERTIFICADO DIGITAL", icon: "🔐" },
-                    { name: "CONFECÇÃO DE CRACHÁS", icon: "🆔" },
-                    { name: "SANEAMENTO CADASTRAL", icon: "📋" },
-                    { name: "ARMAZENAMENTO ARQ. FISCAIS", icon: "📁" },
-                  ].map((service, index) => (
-                    <div
-                      key={index}
-                      className="group p-4 bg-gradient-to-br from-brand-accent/10 to-transparent border border-brand-accent/20 rounded-xl hover:border-brand-accent/40 hover:bg-brand-accent/5 transform hover:scale-105 transition-all duration-300 cursor-pointer"
-                      style={{
-                        animation: `fade-in 0.6s ease-out forwards`,
-                        animationDelay: `${index * 0.1}s`,
-                        opacity: 0,
-                      }}
-                      onClick={() => {
-                        const message = encodeURIComponent(
-                          `Olá! Quero saber mais sobre: ${service.name}`
-                        );
-                        window.open(
-                          `https://wa.me/5521972145721?text=${message}`,
-                          "_blank"
-                        );
-                      }}
-                    >
+                  {[{
+                  name: "PONTO ELETRÔNICO",
+                  icon: "⏰"
+                }, {
+                  name: "AUDITORIA DE CARTÕES",
+                  icon: "💳"
+                }, {
+                  name: "REVISÃO TRIBUTÁRIA",
+                  icon: "📊"
+                }, {
+                  name: "SISTEMA DE COTAÇÃO",
+                  icon: "💰"
+                }, {
+                  name: "CERTIFICADO DIGITAL",
+                  icon: "🔐"
+                }, {
+                  name: "CONFECÇÃO DE CRACHÁS",
+                  icon: "🆔"
+                }, {
+                  name: "SANEAMENTO CADASTRAL",
+                  icon: "📋"
+                }, {
+                  name: "ARMAZENAMENTO ARQ. FISCAIS",
+                  icon: "📁"
+                }].map((service, index) => <div key={index} className="group p-4 bg-gradient-to-br from-brand-accent/10 to-transparent border border-brand-accent/20 rounded-xl hover:border-brand-accent/40 hover:bg-brand-accent/5 transform hover:scale-105 transition-all duration-300 cursor-pointer" style={{
+                  animation: `fade-in 0.6s ease-out forwards`,
+                  animationDelay: `${index * 0.1}s`,
+                  opacity: 0
+                }} onClick={() => {
+                  const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${service.name}`);
+                  window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
+                }}>
                       <div className="text-center">
                         <div className="text-2xl mb-2">{service.icon}</div>
                         <div className="text-xs font-semibold text-white group-hover:text-brand-accent transition-colors">
                           {service.name}
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 <div className="mt-8 text-center">
-                  <Button
-                    className="btn-primary w-full group"
-                    onClick={() => {
-                      window.open("https://wa.me/5521972145721", "_blank");
-                    }}
-                  >
+                  <Button className="btn-primary w-full group" onClick={() => {
+                  window.open("https://wa.me/5521972145721", "_blank");
+                }}>
                     Ver Todos os Serviços
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -195,8 +175,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
