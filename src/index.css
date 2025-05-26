@@ -202,6 +202,19 @@
   .interactive-hover {
     @apply transform transition-all duration-300 hover:scale-105 hover:shadow-glow;
   }
+
+  /* Novos efeitos inovadores */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 192, 184, 0.5), 0 0 40px rgba(0, 192, 184, 0.3);
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  }
+
+  .floating-elements {
+    animation: float-random 6s ease-in-out infinite;
+  }
 }
 
 /* Animações personalizadas */
@@ -216,6 +229,37 @@
 
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes float-random {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(1deg); }
+  66% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes tech-grid {
+  0% { backgroundPosition: '0% 0%'; }
+  100% { backgroundPosition: '100% 100%'; }
 }
 
 /* Melhorias de tipografia */
