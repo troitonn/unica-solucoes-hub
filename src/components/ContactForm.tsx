@@ -101,22 +101,22 @@ const ContactForm = () => {
             <div className="p-8">
               <form onSubmit={handleSubmit} className="space-y-5 bg-[brand-accent-dark] bg-transparent">
                 <div>
-                  <Label htmlFor="name" className="class=\"text-sm bg-white text-black\"">Nome</Label>
+                  <Label htmlFor="name">Nome</Label>
                   <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
                 </div>
                 
                 <div>
-                  <Label htmlFor="company" className="class=\"text-sm bg-white text-black\"">Empresa</Label>
+                  <Label htmlFor="company">Empresa</Label>
                   <Input id="company" name="company" value={formData.company} onChange={handleChange} />
                 </div>
                 
                 <div>
-                  <Label htmlFor="email" className="class=\"text-sm bg-white text-black\"">E-mail</Label>
+                  <Label htmlFor="email">E-mail</Label>
                   <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required />
                 </div>
                 
                 <div>
-                  <Label htmlFor="phone" className="class=\"text-sm bg-white text-black\"">Telefone</Label>
+                  <Label htmlFor="phone">Telefone</Label>
                   <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
                 </div>
                 
