@@ -80,7 +80,7 @@ const ContactForm = () => {
       <div className="section-container my-0 py-[22px]">
         <div className="bg-white shadow-xl rounded-2xl overflow-hidden max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2">
-            <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
+            <div className="relative tech-card p-9 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
               <h3 className="font-bold mb-6 text-[brand-accent-dark] text-brand-slate">Quero aplicar estes serviços na minha empresa</h3>
               <p className="mb-8 text-zinc-900">
                 Se você reconhece a necessidade de reavaliar rotinas dentro da sua organização, deseja manter uma relação mais
@@ -99,7 +99,7 @@ const ContactForm = () => {
             </div>
             
             <div className="bg-gradient-to-b from-white/20 to-transparent\n">
-              <form onSubmit={handleSubmit} className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/40 to-brand-dark/80">
+              <form onSubmit={handleSubmit} className="relative tech-card p-9 pulse-glow bg-gradient-to-br from-brand-accent/40 to-brand-dark/80">
                 <div>
                   <Label htmlFor="name">Nome</Label>
                   <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
