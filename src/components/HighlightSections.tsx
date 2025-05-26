@@ -31,9 +31,8 @@ const HighlightSections = () => {
       
       <div className="section-container relative z-10 my-0">
         <div className="text-center mb-16">
-          <h2 className="section-title text-gradient mb-6">
-            Problemas que você pode estar enfrentando
-          </h2>
+          <h2 className="section-title text-gradient mb-6">Cada solução é um
+ponto de virada</h2>
           <p className="section-subtitle">
             Identificamos os principais desafios dos nossos clientes e criamos soluções específicas
           </p>
