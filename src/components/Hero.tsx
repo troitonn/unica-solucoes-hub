@@ -26,9 +26,9 @@ const Hero = () => {
             {/* Título impactante */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="block text-white">Somos a</span>
-                <span className="block text-gradient text-glow">Única</span>
-                <span className="block text-white text-4xl md:text-5xl lg:text-6xl mt-2">
+                <span className="block text-white text-center">Somos a</span>
+                <span className="block text-gradient text-glow text-center">Única</span>
+                <span className="block text-white text-4xl md:text-5xl lg:text-6xl mt-2 text-center">
                   que você precisa!
                 </span>
               </h1>
@@ -74,7 +74,7 @@ const Hero = () => {
               </div>
               
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+                <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-2 text-center">
                   Tem coisas que só a Única faz!
                 </h2>
                 <div className="flex items-center justify-center gap-2 text-brand-accent">
@@ -111,65 +111,7 @@ const Hero = () => {
             {/* Card principal de serviços */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/20 to-transparent rounded-3xl blur-xl"></div>
-              <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80 px-px mx-[24px]">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold text-gradient mb-2">
-                    Nossos Serviços
-                  </h3>
-                  <p className="text-gray-300">Soluções completas para seu negócio</p>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-3 px-[240px]">
-                  {[{
-                  name: "PONTO ELETRÔNICO",
-                  icon: "⏰"
-                }, {
-                  name: "AUDITORIA DE CARTÕES",
-                  icon: "💳"
-                }, {
-                  name: "REVISÃO TRIBUTÁRIA",
-                  icon: "📊"
-                }, {
-                  name: "SISTEMA DE COTAÇÃO",
-                  icon: "💰"
-                }, {
-                  name: "CERTIFICADO DIGITAL",
-                  icon: "🔐"
-                }, {
-                  name: "CONFECÇÃO DE CRACHÁS",
-                  icon: "🆔"
-                }, {
-                  name: "SANEAMENTO CADASTRAL",
-                  icon: "📋"
-                }, {
-                  name: "ARMAZENAMENTO ARQ. FISCAIS",
-                  icon: "📁"
-                }].map((service, index) => <div key={index} style={{
-                  animationDelay: `${index * 100}ms`,
-                  opacity: 0,
-                  animation: `fade-in 0.6s ease-out forwards ${index * 0.1}s`
-                }} onClick={() => {
-                  const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${service.name}`);
-                  window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
-                }} className="group w-32 h-32 flex items-center justify-center bg-gradient-to-br from-brand-accent/10 to-transparent border border-brand-accent/20 rounded-full hover:border-brand-accent/40 hover:bg-brand-accent/5 transform hover:scale-105 transition-all duration-300 cursor-pointer\n">
-                      <div className="text-center">
-                        <div className="text-2xl mb-2">{service.icon}</div>
-                        <div className="text-xs font-semibold text-white group-hover:text-brand-accent transition-colors">
-                          {service.name}
-                        </div>
-                      </div>
-                    </div>)}
-                </div>
-                
-                <div className="mt-8 text-center">
-                  <Button className="btn-primary w-full group" onClick={() => {
-                  window.open("https://wa.me/5521972145721", "_blank");
-                }}>
-                    Ver Todos os Serviços
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </div>
+              
             </div>
             
             {/* Elementos decorativos */}
