@@ -26,15 +26,15 @@ const Hero = () => {
             {/* Título impactante */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="block text-white">Somos a</span>
-                <span className="block text-gradient text-glow">Única</span>
-                <span className="block text-white text-4xl md:text-5xl lg:text-6xl mt-2">
+                <span className="block text-white text-center">Somos a</span>
+                <span className="block text-gradient text-glow text-center">Única</span>
+                <span className="block text-white text-4xl md:text-5xl lg:text-6xl mt-2 text-center">
                   que você precisa!
                 </span>
               </h1>
               
               <div className="bg-gradient-to-r from-brand-accent/10 to-transparent p-6 rounded-2xl border border-brand-accent/20">
-                <p className="text-xl md:text-2xl text-white leading-relaxed">
+                <p className="text-xl md:text-2xl text-white leading-relaxed text-center">
                   Uma empresa que <span className="text-brand-accent font-bold">nasceu por você e para você!</span>
                 </p>
               </div>
