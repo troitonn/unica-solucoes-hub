@@ -127,7 +127,7 @@ const ContactForm = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {services.map(service => <div key={service} className="flex items-center space-x-2 bg-transparent">
                         <Checkbox id={`service-${service}`} checked={formData.services[service] || false} onCheckedChange={() => handleServiceToggle(service)} />
-                        <Label htmlFor={`service-${service}`} className="text-sm bg-white text-black">
+                        <Label htmlFor={`service-${service}`} className="text-sm text-white bg-transparent">
                           {service}
                         </Label>
                       </div>)}
