@@ -44,7 +44,7 @@ const HighlightSections = () => {
           opacity: 0,
           animation: `fade-in 0.8s ease-out forwards ${index * 0.2}s`
         }} className="">
-              <div className="p-8">
+              <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="text-4xl">{highlight.emoji}</div>
                   <div className="text-brand-accent">
