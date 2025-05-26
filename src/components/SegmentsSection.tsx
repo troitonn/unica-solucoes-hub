@@ -3,8 +3,8 @@ import { Building2 } from "lucide-react";
 
 const SegmentsSection = () => {
   const segments = [
-    "Autônomos",
-    "Supermercado", 
+    "Supermercado",
+    "Mercado de Bairro",
     "Hortifrúti",
     "Padaria",
     "Açougue",
@@ -17,9 +17,7 @@ const SegmentsSection = () => {
     "Mercearias",
     "Cafeterias",
     "Materiais de construção",
-    "Atacado de doces",
-    "Atacado de embalagens",
-    "Atacado de laticínios",
+    "Atacados",
   ];
 
   return (
