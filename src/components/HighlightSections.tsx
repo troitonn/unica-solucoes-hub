@@ -29,7 +29,7 @@ const HighlightSections = () => {
   return <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 tech-grid-bg opacity-10"></div>
       
-      <div className="section-container relative z-10">
+      <div className="section-container relative z-10 my-0">
         <div className="text-center mb-16">
           <h2 className="section-title text-gradient mb-6">
             Problemas que você pode estar enfrentando

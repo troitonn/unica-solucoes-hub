@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,81 +5,70 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, MessageSquare } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-
-const services = [
-  "Ponto Eletrônico",
-  "Auditoria de Cartões",
-  "Revisão Tributária",
-  "Sistema de Cotação",
-  "Certificado Digital",
-  "Confecção de Crachás",
-  "Saneamento Cadastral",
-  "Armazenamento Arq. Fiscais",
-];
-
+const services = ["Ponto Eletrônico", "Auditoria de Cartões", "Revisão Tributária", "Sistema de Cotação", "Certificado Digital", "Confecção de Crachás", "Saneamento Cadastral", "Armazenamento Arq. Fiscais"];
 const ContactForm = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     company: '',
     email: '',
     phone: '',
-    services: {} as Record<string, boolean>,
+    services: {} as Record<string, boolean>
   });
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value,
+      [name]: value
     }));
   };
-
   const handleServiceToggle = (service: string) => {
     setFormData(prev => ({
       ...prev,
       services: {
         ...prev.services,
-        [service]: !prev.services[service],
-      },
+        [service]: !prev.services[service]
+      }
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Get selected services
-    const selectedServices = Object.keys(formData.services)
-      .filter(key => formData.services[key])
-      .join(", ");
-    
+    const selectedServices = Object.keys(formData.services).filter(key => formData.services[key]).join(", ");
+
     // Create message for WhatsApp
     const message = `Olá, meu nome é *${formData.name}*${formData.company ? ` da empresa *${formData.company}*` : ''}.\n\nGostaria de saber mais sobre os serviços: *${selectedServices}*.\n\nMeus contatos:\nEmail: ${formData.email}\nTelefone: ${formData.phone}`;
-    
+
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
-    
+
     // WhatsApp API URL
     const whatsappUrl = `https://wa.me/5521972145721?text=${encodedMessage}`;
-    
+
     // Show toast
     toast({
       title: "Redirecionando para WhatsApp",
-      description: "Você será redirecionado para o WhatsApp em instantes.",
+      description: "Você será redirecionado para o WhatsApp em instantes."
     });
-    
+
     // Open WhatsApp in a new tab
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 1000);
-    
+
     // Reset form
     setFormData({
       name: '',
       company: '',
       email: '',
       phone: '',
-      services: {},
+      services: {}
     });
   };
 
@@ -88,77 +76,48 @@ const ContactForm = () => {
   const isAnyServiceSelected = Object.values(formData.services).some(value => value);
   // Check if form is valid
   const isFormValid = formData.name && formData.email && formData.phone && isAnyServiceSelected;
-
-  return (
-    <section id="contato" className="py-16 bg-gray-50">
+  return <section id="contato" className="py-16 bg-gray-50">
       <div className="section-container">
         <div className="bg-white shadow-xl rounded-2xl overflow-hidden max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2">
             <div className="bg-brand-blue p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Quero aplicar estes serviços na minha empresa</h3>
-              <p className="mb-8 text-gray-300">
+              <h3 className="font-bold mb-6 text-[brand-accent-dark] text-brand-slate">Quero aplicar estes serviços na minha empresa</h3>
+              <p className="mb-8 text-zinc-900">
                 Se você reconhece a necessidade de reavaliar rotinas dentro da sua organização, deseja manter uma relação mais
                 profissional com seus funcionários e quer garantir que os setories adminitrativo e financeiro
                 estejam equipados com as melhores ferramentas do mercado, a Única Soluções é pra você!
               </p>
               
-              <div className="mt-auto pt-8">
+              <div className="mt-auto pt-8 rounded-lg">
                 <h4 className="font-semibold text-xl mb-2">Contato Direto</h4>
-                <Button 
-                  className="bg-gradient-to-r from-brand-green to-brand-green/90 hover:from-brand-green/90 hover:to-brand-green text-white hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2 mt-2"
-                  onClick={() => {
-                    window.open("https://wa.me/5521972145721", "_blank");
-                  }}
-                >
+                <Button className="bg-gradient-to-r from-brand-green to-brand-green/90 hover:from-brand-green/90 hover:to-brand-green text-white hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2 mt-2" onClick={() => {
+                window.open("https://wa.me/5521972145721", "_blank");
+              }}>
                   <MessageSquare size={16} /> (21) 97214-5721
                 </Button>
               </div>
             </div>
             
             <div className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5 bg-[brand-accent-dark] bg-transparent">
                 <div>
                   <Label htmlFor="name">Nome</Label>
-                  <Input 
-                    id="name" 
-                    name="name" 
-                    value={formData.name} 
-                    onChange={handleChange} 
-                    required
-                  />
+                  <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
                 </div>
                 
                 <div>
                   <Label htmlFor="company">Empresa</Label>
-                  <Input 
-                    id="company" 
-                    name="company" 
-                    value={formData.company} 
-                    onChange={handleChange}
-                  />
+                  <Input id="company" name="company" value={formData.company} onChange={handleChange} />
                 </div>
                 
                 <div>
                   <Label htmlFor="email">E-mail</Label>
-                  <Input 
-                    id="email" 
-                    name="email" 
-                    type="email" 
-                    value={formData.email} 
-                    onChange={handleChange} 
-                    required
-                  />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required />
                 </div>
                 
                 <div>
                   <Label htmlFor="phone">Telefone</Label>
-                  <Input 
-                    id="phone" 
-                    name="phone" 
-                    value={formData.phone} 
-                    onChange={handleChange} 
-                    required
-                  />
+                  <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
                 </div>
                 
                 <div>
@@ -166,29 +125,16 @@ const ContactForm = () => {
                   <p className="text-sm text-gray-500 mb-3">Selecione mais de um serviço se desejar</p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {services.map((service) => (
-                      <div key={service} className="flex items-center space-x-2">
-                        <Checkbox 
-                          id={`service-${service}`} 
-                          checked={formData.services[service] || false}
-                          onCheckedChange={() => handleServiceToggle(service)}
-                        />
-                        <Label 
-                          htmlFor={`service-${service}`} 
-                          className="text-sm"
-                        >
+                    {services.map(service => <div key={service} className="flex items-center space-x-2 bg-zinc-950">
+                        <Checkbox id={`service-${service}`} checked={formData.services[service] || false} onCheckedChange={() => handleServiceToggle(service)} />
+                        <Label htmlFor={`service-${service}`} className="text-sm">
                           {service}
                         </Label>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
                 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-brand-green to-brand-green/90 hover:from-brand-green/90 hover:to-brand-green text-white flex items-center justify-center gap-2"
-                  disabled={!isFormValid}
-                >
+                <Button type="submit" className="w-full bg-gradient-to-r from-brand-green to-brand-green/90 hover:from-brand-green/90 hover:to-brand-green text-white flex items-center justify-center gap-2" disabled={!isFormValid}>
                   ENVIAR PARA WHATSAPP
                   <MessageSquare className="ml-2 h-4 w-4" />
                 </Button>
@@ -197,8 +143,6 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactForm;

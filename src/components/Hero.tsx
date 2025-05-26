@@ -10,10 +10,10 @@ const Hero = () => {
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Conteúdo principal */}
-          <div className="space-y-8 animate-slide-in">
+          <div className="space-y-8 animate-slide-in my-0 py-0 rounded">
             {/* Badge inovador */}
             <div className="flex items-center gap-4 mb-8">
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm">
+              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm rounded-sm">
                 <Zap className="h-5 w-5 mr-2 floating-icon" />
                 <span className="font-semibold">Inovação em cada solução</span>
               </div>
