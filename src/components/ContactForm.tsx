@@ -98,7 +98,7 @@ const ContactForm = () => {
               </div>
             </div>
             
-            <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
+            <div className="bg-gradient-to-b from-white/20 to-transparent\n">
               <form onSubmit={handleSubmit} className="space-y-5 bg-[brand-accent-dark] bg-transparent">
                 <div>
                   <Label htmlFor="name">Nome</Label>
