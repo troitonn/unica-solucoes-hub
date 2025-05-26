@@ -106,7 +106,7 @@ const Hero = () => {
         }}>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/20 to-transparent rounded-3xl blur-xl"></div>
-              <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80 py-[20px] px-0 mx-[-55px]">
+              <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80 py-[10px] px-10 mx-[-55px]">
                 <div className="text-center mb-8">
                   <h3 className="text-3xl font-bold text-gradient mb-2">
                     Nossos Serviços
@@ -159,9 +159,9 @@ const Hero = () => {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <Button className="btn-primary w-full group" onClick={() => {
+                  <Button onClick={() => {
                   window.open("https://wa.me/5521972145721", "_blank");
-                }}>
+                }} className="btn-primary w-full group mx-0 px-0">
                     Ver Todos os Serviços
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
