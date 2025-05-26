@@ -99,7 +99,7 @@ const ContactForm = () => {
             </div>
             
             <div className="bg-gradient-to-b from-white/20 to-transparent\n">
-              <form onSubmit={handleSubmit} className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/20 to-brand-dark/80">
+              <form onSubmit={handleSubmit} className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/40 to-brand-dark/80">
                 <div>
                   <Label htmlFor="name">Nome</Label>
                   <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
