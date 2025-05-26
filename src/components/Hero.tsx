@@ -8,9 +8,9 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-10 w-40 h-40 bg-brand-accent/5 rounded-full blur-3xl"></div>
 
       <div className="section-container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-2 lg:grid-cols-1 gap-16 px-[30px] mx-0 p-1">
           {/* Conteúdo principal */}
-          <div className="space-y-8 animate-slide-in">
+          <div className="space-y-[64] animate-slide-in mx-0 px-0">
             {/* Badge inovador */}
             <div className="">
               <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm rounded-full">
@@ -106,7 +106,7 @@ const Hero = () => {
         }}>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/20 to-transparent rounded-3xl blur-xl"></div>
-              <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
+              <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80 py-[20px] px-0 mx-[-55px]">
                 <div className="text-center mb-8">
                   <h3 className="text-3xl font-bold text-gradient mb-2">
                     Nossos Serviços
@@ -116,7 +116,7 @@ const Hero = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-4 gap-2 mx-0 px-0">
                   {[{
                   name: "PONTO ELETRÔNICO",
                   icon: "⏰"
