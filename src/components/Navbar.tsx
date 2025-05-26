@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-500 ${
-      scrolled ? 'elegant-navbar py-3' : 'bg-transparent py-6'
+      scrolled ? 'modern-navbar py-2' : 'bg-transparent py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -35,19 +35,19 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/36af4156-5046-46f9-bcf0-89cf8ceff89b.png" 
                 alt="Única Soluções Logo" 
-                className="h-14 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg" 
+                className="h-12 w-auto transition-all duration-300 group-hover:scale-105" 
               />
             </a>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-10">
-            <nav className="flex space-x-10">
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            <nav className="flex space-x-8">
               {navItems.map((item) => (
                 <a 
                   key={item.name}
                   href={item.href} 
-                  className="nav-link text-lg font-medium"
+                  className="nav-link"
                 >
                   {item.name}
                 </a>
@@ -55,10 +55,10 @@ const Navbar = () => {
             </nav>
             
             <Button 
-              className="btn-gold ml-6 font-serif"
+              className="btn-primary ml-4"
               onClick={() => window.open("https://wa.me/5521972145721", "_blank")}
             >
-              <MessageSquare className="h-5 w-5 mr-2" />
+              <MessageSquare className="h-4 w-4 mr-2" />
               WhatsApp
             </Button>
           </div>
@@ -68,22 +68,22 @@ const Navbar = () => {
             <button 
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-brand-gray hover:text-brand-navy transition-colors p-3 rounded-lg hover:bg-brand-gold/10"
+              className="text-gray-300 hover:text-brand-accent transition-colors p-2"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
         
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden mt-6 pb-6 border-t border-brand-navy/20">
-            <div className="px-2 pt-6 space-y-3">
+          <div className="md:hidden mt-4 pb-4 border-t border-brand-accent/20">
+            <div className="px-2 pt-4 space-y-2">
               {navItems.map((item, index) => (
                 <a 
                   key={item.name}
                   href={item.href} 
-                  className="block px-4 py-3 text-brand-gray hover:text-brand-navy hover:bg-brand-gold/10 rounded-xl transition-all duration-300 font-medium"
+                  className="block px-3 py-2 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/5 rounded-lg transition-all duration-300"
                   onClick={() => setIsOpen(false)}
                   style={{ 
                     opacity: 0, 
@@ -93,15 +93,15 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="px-4 py-3" style={{ opacity: 0, animation: `fade-in 0.3s ease-out forwards 0.4s` }}>
+              <div className="px-3 py-2" style={{ opacity: 0, animation: `fade-in 0.3s ease-out forwards 0.4s` }}>
                 <Button 
-                  className="w-full btn-gold font-serif"
+                  className="w-full btn-primary"
                   onClick={() => {
                     window.open("https://wa.me/5521972145721", "_blank");
                     setIsOpen(false);
                   }}
                 >
-                  <MessageSquare className="h-5 w-5 mr-2" />
+                  <MessageSquare className="h-4 w-4 mr-2" />
                   WhatsApp
                 </Button>
               </div>

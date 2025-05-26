@@ -63,19 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Nova paleta elegante e tecnológica
+				// Nova paleta de cores tecnológica
 				brand: {
-					navy: "#0F1B2E",      // Azul-marinho principal
-					"navy-light": "#1E3A5F", // Azul-marinho claro
-					"navy-dark": "#0A1221",   // Azul-marinho escuro
-					white: "#FFFFFF",         // Branco puro
-					gray: "#4A5568",          // Cinza grafite
-					"gray-light": "#718096",  // Cinza claro
-					"gray-dark": "#2D3748",   // Cinza escuro
-					gold: "#D69E2E",          // Dourado elegante
-					"gold-light": "#ECC94B",  // Dourado claro
-					accent: "#3182CE",        // Azul de destaque
-					"accent-light": "#63B3ED" // Azul claro de destaque
+					dark: "#02131d",
+					accent: "#00c0b8",
+					"accent-light": "#33d1cb",
+					"accent-dark": "#008a84",
+					navy: "#0a1a2a",
+					slate: "#1e293b",
+					"slate-light": "#334155"
 				}
 			},
 			borderRadius: {
@@ -108,21 +104,17 @@ export default {
 					'0%': { opacity: '0', transform: 'translateY(30px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
+				'glow-pulse': {
+					'0%, 100%': { opacity: '0.6' },
+					'50%': { opacity: '1' }
+				},
 				'float': {
-					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-					'50%': { transform: 'translateY(-20px) rotate(1deg)' }
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				},
-				'float-reverse': {
-					'0%, 100%': { transform: 'translateY(-10px) rotate(0deg)' },
-					'50%': { transform: 'translateY(10px) rotate(-1deg)' }
-				},
-				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 20px rgba(209, 213, 219, 0.3)' },
-					'50%': { boxShadow: '0 0 40px rgba(214, 158, 46, 0.6)' }
-				},
-				'shimmer': {
-					'0%': { backgroundPosition: '-200% center' },
-					'100%': { backgroundPosition: '200% center' }
+				'tech-grid': {
+					'0%': { backgroundPosition: '0% 0%' },
+					'100%': { backgroundPosition: '100% 100%' }
 				}
 			},
 			animation: {
@@ -130,32 +122,24 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-up': 'slide-up 0.8s ease-out',
-				'float': 'float 6s ease-in-out infinite',
-				'float-reverse': 'float-reverse 8s ease-in-out infinite',
-				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-				'shimmer': 'shimmer 2s linear infinite'
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'tech-grid': 'tech-grid 20s linear infinite'
 			},
 			fontFamily: {
 				sans: ['"Inter"', '"Segoe UI"', 'system-ui', 'sans-serif'],
-				serif: ['"Playfair Display"', 'Georgia', 'serif'],
-				display: ['"Playfair Display"', 'Georgia', 'serif'],
+				display: ['"Poppins"', '"Inter"', 'sans-serif'],
 			},
 			backgroundImage: {
-				'elegant-gradient': 'linear-gradient(135deg, #0F1B2E 0%, #1E3A5F 50%, #0F1B2E 100%)',
-				'gold-gradient': 'linear-gradient(135deg, #D69E2E 0%, #ECC94B 100%)',
-				'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
-				'shimmer-gradient': 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+				'tech-gradient': 'linear-gradient(135deg, #02131d 0%, #0a1a2a 50%, #02131d 100%)',
+				'accent-gradient': 'linear-gradient(135deg, #00c0b8 0%, #33d1cb 100%)',
+				'card-gradient': 'linear-gradient(135deg, rgba(0, 192, 184, 0.1) 0%, rgba(2, 19, 29, 0.8) 100%)',
 			},
 			boxShadow: {
-				'elegant': '0 10px 40px rgba(15, 27, 46, 0.15)',
-				'elegant-lg': '0 20px 60px rgba(15, 27, 46, 0.2)',
-				'gold-glow': '0 0 30px rgba(214, 158, 46, 0.3)',
-				'float': '0 20px 40px rgba(0, 0, 0, 0.1)',
-				'glass': '0 8px 32px rgba(15, 27, 46, 0.12)',
+				'tech': '0 4px 6px -1px rgba(0, 192, 184, 0.1), 0 2px 4px -1px rgba(0, 192, 184, 0.06)',
+				'tech-lg': '0 10px 15px -3px rgba(0, 192, 184, 0.1), 0 4px 6px -2px rgba(0, 192, 184, 0.05)',
+				'glow': '0 0 20px rgba(0, 192, 184, 0.3)',
 			},
-			backdropBlur: {
-				'xs': '2px',
-			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

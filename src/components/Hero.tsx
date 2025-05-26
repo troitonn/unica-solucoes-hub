@@ -1,106 +1,113 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare, Zap, Shield, Check, Star, Users, Clock, Award } from "lucide-react";
+import { ArrowRight, MessageSquare, Zap, Shield, Check, Star, Users, Clock } from "lucide-react";
 
 const Hero = () => {
   return (
     <section className="hero-section min-h-screen flex items-center pt-20 pb-16 relative">
-      {/* Elementos de fundo elegantes */}
-      <div className="absolute inset-0 elegant-grid-bg opacity-30"></div>
-      <div className="absolute top-1/4 left-10 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-brand-accent/10 rounded-full blur-3xl animate-float-reverse"></div>
+      {/* Background elements */}
+      <div className="absolute inset-0 tech-grid-bg opacity-20"></div>
+      <div className="absolute top-1/4 left-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-10 w-40 h-40 bg-brand-accent/5 rounded-full blur-3xl"></div>
       
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Conteúdo principal */}
-          <div className="space-y-10 animate-slide-in">
+          <div className="space-y-8 animate-slide-in">
             {/* Badge inovador */}
-            <div className="flex items-center gap-6 mb-10">
-              <div className="inline-flex items-center px-8 py-4 rounded-full bg-glass-gradient border border-brand-gold/30 text-brand-navy backdrop-blur-sm shadow-gold-glow">
-                <Award className="h-6 w-6 mr-3 text-brand-gold floating-element" />
-                <span className="font-semibold text-lg">Inovação em cada solução</span>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm">
+                <Zap className="h-5 w-5 mr-2 floating-icon" />
+                <span className="font-semibold">Inovação em cada solução</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-300">
+                <Star className="h-4 w-4 text-yellow-400" />
+                <span>5.0 • 500+ clientes satisfeitos</span>
               </div>
             </div>
 
-            {/* Título impactante com nova mensagem */}
-            <div className="space-y-6">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="block text-brand-navy font-serif">Somos a</span>
-                <span className="block text-shimmer font-serif text-8xl md:text-9xl lg:text-[10rem] mt-4">
-                  Única
+            {/* Título impactante */}
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                <span className="block text-white">Somos a</span>
+                <span className="block text-gradient text-glow">Única</span>
+                <span className="block text-white text-4xl md:text-5xl lg:text-6xl mt-2">
+                  que você precisa!
                 </span>
               </h1>
               
-              <div className="bg-glass-gradient backdrop-blur-md p-8 rounded-3xl border border-brand-gold/20 shadow-elegant">
-                <p className="text-2xl md:text-3xl text-brand-navy leading-relaxed font-serif">
-                  Uma empresa que <span className="text-brand-gold font-bold">nasceu por você e para você!</span>
+              <div className="bg-gradient-to-r from-brand-accent/10 to-transparent p-6 rounded-2xl border border-brand-accent/20">
+                <p className="text-xl md:text-2xl text-white leading-relaxed">
+                  Uma empresa que <span className="text-brand-accent font-bold">nasceu por você e para você!</span>
                 </p>
               </div>
             </div>
 
-            {/* Proposta de valor principal */}
-            <div className="space-y-8">
-              <div className="floating-card bg-gradient-to-r from-brand-navy/5 to-brand-gold/5">
-                <h2 className="text-2xl md:text-3xl font-serif text-brand-navy mb-4">
-                  Otimize seus processos com praticidade e segurança
-                </h2>
-                <p className="text-xl text-brand-gray leading-relaxed">
-                  <span className="text-brand-gold font-bold">Garantindo mais tempo para o seu negócio!</span> Deixe a burocracia com a gente.
+            {/* Proposta de valor */}
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 p-4 bg-brand-accent/5 rounded-xl border border-brand-accent/10">
+                  <div className="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center">
+                    <Clock className="h-6 w-6 text-brand-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Economia de Tempo</h3>
+                    <p className="text-sm text-gray-300">Processos otimizados</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3 p-4 bg-brand-accent/5 rounded-xl border border-brand-accent/10">
+                  <div className="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center">
+                    <Shield className="h-6 w-6 text-brand-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">100% Seguro</h3>
+                    <p className="text-sm text-gray-300">Proteção garantida</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-6 bg-gradient-to-r from-brand-accent/10 to-brand-accent/5 rounded-2xl border border-brand-accent/20">
+                <p className="text-lg text-white mb-2">
+                  <span className="text-brand-accent font-bold">Otimize seus processos</span> com praticidade e segurança
+                </p>
+                <p className="text-gray-300">
+                  Garantindo mais tempo para o seu negócio! <span className="text-brand-accent font-semibold">Deixe a burocracia com a gente.</span>
                 </p>
               </div>
               
-              <div className="text-center py-8">
-                <h2 className="text-4xl md:text-5xl font-serif luxury-text mb-4">
+              <div className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-2">
                   Tem coisas que só a Única faz!
                 </h2>
-                <div className="flex items-center justify-center gap-3 text-brand-gold">
-                  <Star className="h-6 w-6 animate-pulse" />
-                  <span className="font-semibold text-lg">Mais de 500 empresas confiam em nós</span>
-                  <Star className="h-6 w-6 animate-pulse" />
-                </div>
-              </div>
-
-              {/* Benefícios em cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="glass-card group">
-                  <div className="w-16 h-16 rounded-full bg-brand-navy/10 flex items-center justify-center mb-4 group-hover:bg-brand-gold/20 transition-colors">
-                    <Clock className="h-8 w-8 text-brand-navy group-hover:text-brand-gold transition-colors" />
-                  </div>
-                  <h3 className="font-serif text-xl text-brand-navy mb-2">Economia de Tempo</h3>
-                  <p className="text-brand-gray">Processos otimizados e automatizados</p>
-                </div>
-                
-                <div className="glass-card group">
-                  <div className="w-16 h-16 rounded-full bg-brand-navy/10 flex items-center justify-center mb-4 group-hover:bg-brand-gold/20 transition-colors">
-                    <Shield className="h-8 w-8 text-brand-navy group-hover:text-brand-gold transition-colors" />
-                  </div>
-                  <h3 className="font-serif text-xl text-brand-navy mb-2">100% Seguro</h3>
-                  <p className="text-brand-gray">Proteção e conformidade garantidas</p>
+                <div className="flex items-center justify-center gap-2 text-brand-accent">
+                  <Users className="h-5 w-5" />
+                  <span className="font-medium">Mais de 500 empresas confiam em nós</span>
                 </div>
               </div>
             </div>
 
             {/* CTAs principais */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Button 
                 size="lg" 
-                className="btn-primary group text-xl px-10 py-5 font-serif"
+                className="btn-primary group text-lg px-8 py-4"
                 onClick={() => {
                   document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 Descobrir Soluções
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
               <Button 
                 size="lg" 
-                className="btn-gold group text-xl px-10 py-5 font-serif"
+                className="btn-outline group text-lg px-8 py-4"
                 onClick={() => {
                   window.open("https://wa.me/5521972145721", "_blank");
                 }}
               >
-                <MessageSquare className="mr-3 h-6 w-6" /> 
+                <MessageSquare className="mr-2 h-5 w-5" /> 
                 Falar Conosco
               </Button>
             </div>
@@ -110,16 +117,16 @@ const Hero = () => {
           <div className="animate-slide-in relative" style={{ animationDelay: '0.3s' }}>
             {/* Card principal de serviços */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gold-gradient rounded-3xl blur-2xl opacity-20"></div>
-              <div className="relative floating-card bg-gradient-to-br from-brand-white to-brand-white/80 animate-pulse-glow">
-                <div className="text-center mb-10">
-                  <h3 className="text-4xl font-serif luxury-text mb-4">
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/20 to-transparent rounded-3xl blur-xl"></div>
+              <div className="relative tech-card p-8 pulse-glow bg-gradient-to-br from-brand-accent/10 to-brand-dark/80">
+                <div className="text-center mb-8">
+                  <h3 className="text-3xl font-bold text-gradient mb-2">
                     Nossos Serviços
                   </h3>
-                  <p className="text-brand-gray text-lg">Soluções completas para seu negócio</p>
+                  <p className="text-gray-300">Soluções completas para seu negócio</p>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3">
                   {[
                     { name: "PONTO ELETRÔNICO", icon: "⏰" },
                     { name: "AUDITORIA DE CARTÕES", icon: "💳" }, 
@@ -132,7 +139,7 @@ const Hero = () => {
                   ].map((service, index) => (
                     <div 
                       key={index}
-                      className="group p-6 bg-glass-gradient border border-brand-navy/10 rounded-2xl hover:border-brand-gold hover:bg-brand-gold/5 hover:shadow-gold-glow elegant-hover cursor-pointer"
+                      className="group p-4 bg-gradient-to-br from-brand-accent/10 to-transparent border border-brand-accent/20 rounded-xl hover:border-brand-accent/40 hover:bg-brand-accent/5 transform hover:scale-105 transition-all duration-300 cursor-pointer"
                       style={{ 
                         animationDelay: `${index * 100}ms`,
                         opacity: 0,
@@ -144,8 +151,8 @@ const Hero = () => {
                       }}
                     >
                       <div className="text-center">
-                        <div className="text-3xl mb-3">{service.icon}</div>
-                        <div className="text-sm font-semibold text-brand-navy group-hover:text-brand-gold transition-colors leading-tight">
+                        <div className="text-2xl mb-2">{service.icon}</div>
+                        <div className="text-xs font-semibold text-white group-hover:text-brand-accent transition-colors">
                           {service.name}
                         </div>
                       </div>
@@ -153,39 +160,39 @@ const Hero = () => {
                   ))}
                 </div>
                 
-                <div className="mt-10 text-center">
+                <div className="mt-8 text-center">
                   <Button 
-                    className="btn-primary w-full group text-lg font-serif"
+                    className="btn-primary w-full group"
                     onClick={() => {
                       window.open("https://wa.me/5521972145721", "_blank");
                     }}
                   >
                     Ver Todos os Serviços
-                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </div>
             </div>
             
-            {/* Elementos decorativos flutuantes */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-brand-gold/20 rounded-full blur-2xl animate-float"></div>
-            <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-brand-accent/20 rounded-full blur-2xl animate-float-reverse"></div>
+            {/* Elementos decorativos */}
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-brand-accent/20 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-brand-accent/10 rounded-full blur-xl"></div>
           </div>
         </div>
         
         {/* Indicadores de conquistas */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="glass-card text-center group">
-            <div className="text-5xl font-bold text-brand-gold mb-3 group-hover:text-shimmer transition-all">500+</div>
-            <div className="text-brand-gray font-medium">Clientes Satisfeitos</div>
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="p-6 bg-brand-accent/5 rounded-2xl border border-brand-accent/10">
+            <div className="text-3xl font-bold text-brand-accent mb-2">500+</div>
+            <div className="text-gray-300">Clientes Satisfeitos</div>
           </div>
-          <div className="glass-card text-center group">
-            <div className="text-5xl font-bold text-brand-gold mb-3 group-hover:text-shimmer transition-all">24h</div>
-            <div className="text-brand-gray font-medium">Suporte Disponível</div>
+          <div className="p-6 bg-brand-accent/5 rounded-2xl border border-brand-accent/10">
+            <div className="text-3xl font-bold text-brand-accent mb-2">24h</div>
+            <div className="text-gray-300">Suporte Disponível</div>
           </div>
-          <div className="glass-card text-center group">
-            <div className="text-5xl font-bold text-brand-gold mb-3 group-hover:text-shimmer transition-all">100%</div>
-            <div className="text-brand-gray font-medium">Processos Online</div>
+          <div className="p-6 bg-brand-accent/5 rounded-2xl border border-brand-accent/10">
+            <div className="text-3xl font-bold text-brand-accent mb-2">100%</div>
+            <div className="text-gray-300">Processos Online</div>
           </div>
         </div>
       </div>
