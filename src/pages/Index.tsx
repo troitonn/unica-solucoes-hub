@@ -1,6 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import HighlightSections from "@/components/HighlightSections";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import SegmentsSection from "@/components/SegmentsSection";
@@ -53,6 +54,10 @@ const Index = () => {
         
         <div className="animate-on-scroll">
           <Hero />
+        </div>
+        
+        <div className="animate-on-scroll">
+          <HighlightSections />
         </div>
         
         <div className="animate-on-scroll">

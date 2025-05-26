@@ -19,19 +19,16 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
               Somos a{" "}
               <span className="text-gradient">Única</span>,<br />
-              <span className="text-white">transformando</span><br />
-              o seu negócio{" "}
-              <span className="text-brand-accent">digital!</span>
+              <span className="text-white">uma empresa que nasceu</span><br />
+              <span className="text-brand-accent">por você e para você!</span>
             </h1>
 
             {/* Descrição */}
             <div className="space-y-4">
               <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
-                Otimize seus processos com{" "}
-                <span className="text-brand-accent font-semibold">tecnologia avançada</span>{" "}
-                e{" "}
-                <span className="text-brand-accent font-semibold">segurança de dados</span>,
-                garantindo mais tempo para o crescimento do seu negócio.
+                <span className="text-brand-accent font-semibold">Otimize seus processos</span>{" "}
+                com praticidade e segurança, garantindo mais tempo para o seu negócio!{" "}
+                <span className="text-brand-accent font-semibold">Deixe a burocracia com a gente.</span>
               </p>
               
               <p className="text-2xl md:text-3xl font-bold text-gradient">
@@ -89,14 +86,14 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Área visual dos serviços */}
+          {/* Área visual dos serviços em fileira */}
           <div className="animate-slide-in" style={{ animationDelay: '0.3s' }}>
             <div className="tech-card p-8 pulse-glow">
               <h3 className="text-2xl font-bold text-gradient mb-6 text-center">
                 Nossos Serviços
               </h3>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   "PONTO ELETRÔNICO",
                   "AUDITORIA DE CARTÕES", 
@@ -109,7 +106,7 @@ const Hero = () => {
                 ].map((service, index) => (
                   <div 
                     key={index}
-                    className="segment-card interactive-hover"
+                    className="segment-card interactive-hover text-xs"
                     style={{ 
                       animationDelay: `${index * 100}ms`,
                       opacity: 0,
