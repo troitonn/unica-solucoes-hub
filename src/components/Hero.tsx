@@ -12,21 +12,21 @@ const Hero = () => {
           {/* Conteúdo principal */}
           <div className="space-y-8 animate-slide-in my-0 py-0 rounded">
             {/* Badge inovador */}
-            <div className="flex items-center gap-4 mb-8">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm rounded-sm">
+            <div className="flex items-center gap-4 mb-0 py-0 my-0\n">
+              <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm rounded-full">
                 <Zap className="h-5 w-5 mr-2 floating-icon" />
                 <span className="font-semibold">Inovação em cada solução</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-300">
-                <Star className="h-4 w-4 text-yellow-400" />
-                <span>5.0 • 500+ clientes satisfeitos</span>
+                
+                
               </div>
             </div>
 
             {/* Título impactante */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="block text-white text-center">Somos a</span>
+                <span className="block text-white text-center py-0 my-0">Somos a</span>
                 <span className="block text-gradient text-glow text-center">Única</span>
                 <span className="block text-white text-4xl md:text-5xl lg:text-6xl mt-2 text-center">
                   que você precisa!
