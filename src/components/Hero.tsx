@@ -119,7 +119,7 @@ const Hero = () => {
                   <p className="text-gray-300">Soluções completas para seu negócio</p>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-3 px-[240px]">
+                <div className="grid grid-cols-2 gap-3 px-0">
                   {[{
                   name: "PONTO ELETRÔNICO",
                   icon: "⏰"
