@@ -7,12 +7,12 @@ const Hero = () => {
       <div className="absolute top-1/4 left-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-10 w-40 h-40 bg-brand-accent/5 rounded-full blur-3xl"></div>
 
-      <div className="section-container relative z-10">
+      <div className="section-container relative z-10 py-[10px]">
         <div className="grid grid-cols-2 lg:grid-cols-1 gap-16 px-[30px] mx-0 p-1">
           {/* Conteúdo principal */}
           <div className="space-y-[64] animate-slide-in mx-0 px-0">
             {/* Badge inovador */}
-            <div className="">
+            <div className="mx-auto w-64">
               <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-brand-accent/20 to-transparent border border-brand-accent/30 text-brand-accent backdrop-blur-sm rounded-full">
                 <Zap className="h-5 w-5 mr-2 floating-icon" />
                 <span className="font-semibold">Inovação em cada solução</span>
@@ -31,7 +31,7 @@ const Hero = () => {
                 </span>
               </h1>
 
-              <div className="bg-gradient-to-r from-brand-accent/10 to-transparent p-6 rounded-2xl border border-brand-accent/20">
+              <div className="bg-gradient-to-r from-brand-accent/10 to-transparent p-6 rounded-2xl border border-brand-accent/20 py-[24px] my-[10px]">
                 <p className="text-xl md:text-2xl text-white leading-relaxed text-center">
                   Uma empresa que{" "}
                   <span className="text-brand-accent font-bold">
@@ -81,7 +81,7 @@ const Hero = () => {
             </div>
 
             {/* CTAs principais */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 mx-auto w-64">
               <Button size="lg" className="btn-primary group text-lg px-8 py-4" onClick={() => {
               document.getElementById("servicos")?.scrollIntoView({
                 behavior: "smooth"
