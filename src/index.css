@@ -100,6 +100,7 @@
     @apply overflow-x-hidden;
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     position: relative;
+    background-color: #01222e;
   }
 
   .section-container {
@@ -118,16 +119,16 @@
 @layer components {
   /* Navbar moderno */
   .modern-navbar {
-    @apply backdrop-blur-xl bg-slate-900/80 border-b border-cyan-300/20;
+    @apply backdrop-blur-xl bg-[#01222e]/80 border-b border-[#18d7af]/20;
   }
 
   .nav-link {
-    @apply relative text-gray-300 hover:text-cyan-400 transition-all duration-300 font-medium;
+    @apply relative text-gray-300 hover:text-[#18d7af] transition-all duration-300 font-medium;
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-[#18d7af] transition-all duration-300;
   }
 
   .nav-link:hover::after {
@@ -136,20 +137,20 @@
 
   /* Botões modernos */
   .btn-primary {
-    @apply bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+    @apply bg-gradient-to-r from-[#18d7af] to-[#20c997] text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
   }
 
   .btn-outline {
-    @apply border-2 border-cyan-400 text-cyan-400 bg-transparent font-semibold px-6 py-3 rounded-xl hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 backdrop-blur-sm;
+    @apply border-2 border-[#18d7af] text-[#18d7af] bg-transparent font-semibold px-6 py-3 rounded-xl hover:bg-[#18d7af] hover:text-[#01222e] transition-all duration-300 backdrop-blur-sm;
   }
 
   /* Cards modernos */
   .tech-card {
-    @apply bg-white/5 backdrop-blur-md border border-cyan-300/20 rounded-2xl p-6 shadow-2xl hover:shadow-cyan-500/20 transform hover:-translate-y-2 transition-all duration-500;
+    @apply bg-white/5 backdrop-blur-md border border-[#18d7af]/20 rounded-2xl p-6 shadow-2xl hover:shadow-[#18d7af]/20 transform hover:-translate-y-2 transition-all duration-500;
   }
 
   .service-card {
-    @apply bg-white/5 backdrop-blur-md border border-cyan-300/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-500/20 transition-all duration-500;
+    @apply bg-white/5 backdrop-blur-md border border-[#18d7af]/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-[#18d7af]/20 transition-all duration-500;
   }
 
   /* Seções com gradientes */
@@ -170,7 +171,7 @@
 
   /* Estados de hover para interatividade */
   .interactive-hover {
-    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/20;
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-[#18d7af]/20;
   }
 
   .floating-icon {
@@ -179,7 +180,7 @@
 
   /* Segmentos modernos */
   .segment-card {
-    @apply bg-white/5 backdrop-blur-md border border-cyan-300/20 rounded-xl p-4 text-center text-sm font-medium text-white hover:border-cyan-300/40 hover:bg-white/10 transform hover:scale-105 transition-all duration-300;
+    @apply bg-white/5 backdrop-blur-md border border-[#18d7af]/20 rounded-xl p-4 text-center text-sm font-medium text-white hover:border-[#18d7af]/40 hover:bg-white/10 transform hover:scale-105 transition-all duration-300;
   }
 }
 
@@ -276,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#18d7af] via-[#20c997] to-[#18d7af] bg-clip-text text-transparent;
   background-size: 200% auto;
   animation: gradient-flow 3s ease-in-out infinite alternate;
 }
