@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -96,45 +97,9 @@
   }
 
   body {
-    @apply bg-brand-dark text-white font-sans overflow-x-hidden;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(0, 192, 184, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(0, 192, 184, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(0, 192, 184, 0.05) 0%, transparent 50%),
-      linear-gradient(135deg, #02131d 0%, #0a1a2a 50%, #02131d 100%);
+    @apply overflow-x-hidden;
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     position: relative;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(90deg, rgba(0, 192, 184, 0.03) 1px, transparent 1px),
-      linear-gradient(rgba(0, 192, 184, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px, 50px 50px;
-    animation: tech-grid-flow 20s linear infinite;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      radial-gradient(circle at 25% 25%, rgba(0, 192, 184, 0.1) 0%, transparent 30%),
-      radial-gradient(circle at 75% 75%, rgba(0, 192, 184, 0.08) 0%, transparent 30%);
-    animation: floating-orbs 15s ease-in-out infinite alternate;
-    pointer-events: none;
-    z-index: -1;
   }
 
   .section-container {
@@ -153,16 +118,16 @@
 @layer components {
   /* Navbar moderno */
   .modern-navbar {
-    @apply backdrop-blur-xl bg-brand-dark/80 border-b border-brand-accent/20;
+    @apply backdrop-blur-xl bg-slate-900/80 border-b border-cyan-300/20;
   }
 
   .nav-link {
-    @apply relative text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium;
+    @apply relative text-gray-300 hover:text-cyan-400 transition-all duration-300 font-medium;
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300;
   }
 
   .nav-link:hover::after {
@@ -171,62 +136,25 @@
 
   /* Botões modernos */
   .btn-primary {
-    @apply bg-gradient-to-r from-brand-accent to-brand-accent-light text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
-    box-shadow: 0 4px 15px rgba(0, 192, 184, 0.3);
-  }
-
-  .btn-primary:hover {
-    box-shadow: 0 8px 25px rgba(0, 192, 184, 0.4);
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
   }
 
   .btn-outline {
-    @apply border-2 border-brand-accent text-brand-accent bg-transparent font-semibold px-6 py-3 rounded-xl hover:bg-brand-accent hover:text-brand-dark transition-all duration-300 backdrop-blur-sm;
+    @apply border-2 border-cyan-400 text-cyan-400 bg-transparent font-semibold px-6 py-3 rounded-xl hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 backdrop-blur-sm;
   }
 
   /* Cards modernos */
   .tech-card {
-    @apply bg-card-gradient backdrop-blur-sm border border-brand-accent/20 rounded-2xl p-6 shadow-tech hover:shadow-tech-lg transform hover:-translate-y-2 transition-all duration-500;
+    @apply bg-white/5 backdrop-blur-md border border-cyan-300/20 rounded-2xl p-6 shadow-2xl hover:shadow-cyan-500/20 transform hover:-translate-y-2 transition-all duration-500;
   }
 
   .service-card {
-    @apply bg-gradient-to-br from-brand-navy/50 to-brand-slate/30 backdrop-blur-sm border border-brand-accent/10 rounded-2xl overflow-hidden shadow-tech hover:shadow-glow transition-all duration-500;
-  }
-
-  /* Efeitos tecnológicos aprimorados */
-  .tech-grid-bg {
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(0, 192, 184, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(0, 192, 184, 0.1) 0%, transparent 50%),
-      linear-gradient(90deg, rgba(0, 192, 184, 0.05) 1px, transparent 1px),
-      linear-gradient(rgba(0, 192, 184, 0.05) 1px, transparent 1px);
-    background-size: 800px 800px, 600px 600px, 60px 60px, 60px 60px;
-    animation: tech-grid-flow 25s linear infinite;
-  }
-
-  .glow-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-accent to-white;
-  }
-
-  .floating-icon {
-    @apply animate-float;
-  }
-
-  /* Segmentos modernos */
-  .segment-card {
-    @apply bg-gradient-to-br from-brand-accent/10 to-transparent border border-brand-accent/20 rounded-xl p-4 text-center text-sm font-medium text-white hover:border-brand-accent/40 hover:bg-brand-accent/5 transform hover:scale-105 transition-all duration-300;
+    @apply bg-white/5 backdrop-blur-md border border-cyan-300/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-500/20 transition-all duration-500;
   }
 
   /* Seções com gradientes */
   .hero-section {
     @apply relative overflow-hidden;
-    background: 
-      radial-gradient(ellipse at top, rgba(0, 192, 184, 0.1) 0%, transparent 50%),
-      linear-gradient(135deg, #02131d 0%, #0a1a2a 30%, #02131d 100%);
-  }
-
-  .hero-section::before {
-    content: '';
-    @apply absolute inset-0 tech-grid-bg opacity-30;
   }
 
   /* Animações de entrada */
@@ -242,46 +170,20 @@
 
   /* Estados de hover para interatividade */
   .interactive-hover {
-    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-glow;
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/20;
   }
 
-  /* Novos efeitos inovadores */
-  .text-glow {
-    text-shadow: 
-      0 0 10px rgba(0, 192, 184, 0.5), 
-      0 0 20px rgba(0, 192, 184, 0.3),
-      0 0 30px rgba(0, 192, 184, 0.2);
+  .floating-icon {
+    @apply animate-float;
   }
 
-  .glass-effect {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10;
-  }
-
-  .floating-elements {
-    animation: float-enhanced 8s ease-in-out infinite;
+  /* Segmentos modernos */
+  .segment-card {
+    @apply bg-white/5 backdrop-blur-md border border-cyan-300/20 rounded-xl p-4 text-center text-sm font-medium text-white hover:border-cyan-300/40 hover:bg-white/10 transform hover:scale-105 transition-all duration-300;
   }
 }
 
 /* Animações personalizadas aprimoradas */
-@keyframes pulse-glow {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(0, 192, 184, 0.3);
-  }
-  50% { 
-    box-shadow: 0 0 30px rgba(0, 192, 184, 0.6);
-  }
-}
-
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes float-random {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(1deg); }
-  66% { transform: translateY(-10px) rotate(-1deg); }
-}
-
 @keyframes slide-up {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -292,66 +194,80 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
 
-@keyframes tech-grid {
-  0% { backgroundPosition: '0% 0%'; }
-  100% { backgroundPosition: '100% 100%'; }
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
 }
 
-@keyframes tech-grid-flow {
-  0% { 
-    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; 
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  100% { 
-    background-position: 100% 100%, -100% -100%, 60px 60px, 60px 60px; 
-    opacity: 0.3;
-  }
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
 }
 
-@keyframes floating-orbs {
-  0% { 
-    transform: translateY(0px) scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% { 
-    transform: translateY(-20px) scale(1.1);
-    opacity: 0.4;
-  }
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-25px) scale(1.1); }
 }
 
-@keyframes float-enhanced {
-  0%, 100% { 
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.6;
-  }
-  25% { 
-    transform: translateY(-15px) rotate(1deg);
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateY(-10px) rotate(0deg);
-    opacity: 1;
-  }
-  75% { 
-    transform: translateY(-20px) rotate(-1deg);
-    opacity: 0.8;
-  }
+@keyframes drip {
+  0%, 100% { transform: translateY(0px) scaleY(1); }
+  50% { transform: translateY(10px) scaleY(1.2); }
+}
+
+@keyframes drip-down {
+  0% { transform: translateY(-100px) scaleY(0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { transform: translateY(100vh) scaleY(2); opacity: 0.7; }
+  100% { transform: translateY(120vh) scaleY(0); opacity: 0; }
+}
+
+@keyframes drip-down-delayed {
+  0% { transform: translateY(-80px) scaleY(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { transform: translateY(100vh) scaleY(1.8); opacity: 0.6; }
+  100% { transform: translateY(110vh) scaleY(0); opacity: 0; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; scale: 1; }
+  50% { opacity: 0.8; scale: 1.1; }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-drip {
+  animation: drip 3s ease-in-out infinite;
+}
+
+.animate-drip-down {
+  animation: drip-down 8s ease-in-out infinite;
+}
+
+.animate-drip-down-delayed {
+  animation: drip-down-delayed 10s ease-in-out infinite 2s;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
 }
 
 /* Melhorias de tipografia */
@@ -360,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  @apply bg-gradient-to-r from-white via-brand-accent to-white bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent;
   background-size: 200% auto;
   animation: gradient-flow 3s ease-in-out infinite alternate;
 }
