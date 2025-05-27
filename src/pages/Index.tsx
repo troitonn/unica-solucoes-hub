@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PontoEletronicoSection from "@/components/PontoEletronicoSection";
 import HighlightSections from "@/components/HighlightSections";
+import AuditoriaCartaoSection from "@/components/AuditoriaCartaoSection";
 import ServicesSection from "@/components/ServicesSection";
 import SegmentsSection from "@/components/SegmentsSection";
 import ContactForm from "@/components/ContactForm";
@@ -70,6 +71,10 @@ const Index = () => {
         
         <div className="animate-on-scroll">
           <PontoEletronicoSection />
+        </div>
+        
+        <div className="animate-on-scroll">
+          <AuditoriaCartaoSection />
         </div>
         
         <div className="animate-on-scroll">
