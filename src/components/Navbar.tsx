@@ -17,8 +17,9 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: "Serviços", href: "#servicos" },
-    { name: "Quem Somos", href: "#quemsomos" },
+    { name: "Início", href: "/" },
+    { name: "Quem Somos", href: "/quem-somos" },
+    { name: "Serviços", href: "/servicos" },
     { name: "Segmentos", href: "#segmentos" },
     { name: "Contato", href: "#contato" }
   ];

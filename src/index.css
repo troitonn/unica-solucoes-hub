@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -98,8 +97,44 @@
 
   body {
     @apply bg-brand-dark text-white font-sans overflow-x-hidden;
-    background: linear-gradient(135deg, #02131d 0%, #0a1a2a 50%, #02131d 100%);
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(0, 192, 184, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0, 192, 184, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(0, 192, 184, 0.05) 0%, transparent 50%),
+      linear-gradient(135deg, #02131d 0%, #0a1a2a 50%, #02131d 100%);
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(90deg, rgba(0, 192, 184, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(0, 192, 184, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px;
+    animation: tech-grid-flow 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(0, 192, 184, 0.1) 0%, transparent 30%),
+      radial-gradient(circle at 75% 75%, rgba(0, 192, 184, 0.08) 0%, transparent 30%);
+    animation: floating-orbs 15s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: -1;
   }
 
   .section-container {
@@ -136,11 +171,16 @@
 
   /* Botões modernos */
   .btn-primary {
-    @apply bg-accent-gradient text-white font-semibold px-6 py-3 rounded-xl shadow-tech hover:shadow-tech-lg transform hover:scale-105 transition-all duration-300;
+    @apply bg-gradient-to-r from-brand-accent to-brand-accent-light text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+    box-shadow: 0 4px 15px rgba(0, 192, 184, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(0, 192, 184, 0.4);
   }
 
   .btn-outline {
-    @apply border-2 border-brand-accent text-brand-accent bg-transparent font-semibold px-6 py-3 rounded-xl hover:bg-brand-accent hover:text-brand-dark transition-all duration-300;
+    @apply border-2 border-brand-accent text-brand-accent bg-transparent font-semibold px-6 py-3 rounded-xl hover:bg-brand-accent hover:text-brand-dark transition-all duration-300 backdrop-blur-sm;
   }
 
   /* Cards modernos */
@@ -152,15 +192,15 @@
     @apply bg-gradient-to-br from-brand-navy/50 to-brand-slate/30 backdrop-blur-sm border border-brand-accent/10 rounded-2xl overflow-hidden shadow-tech hover:shadow-glow transition-all duration-500;
   }
 
-  /* Efeitos tecnológicos */
+  /* Efeitos tecnológicos aprimorados */
   .tech-grid-bg {
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(0, 192, 184, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(0, 192, 184, 0.05) 0%, transparent 50%),
-      linear-gradient(90deg, rgba(0, 192, 184, 0.03) 1px, transparent 1px),
-      linear-gradient(rgba(0, 192, 184, 0.03) 1px, transparent 1px);
-    background-size: 800px 800px, 600px 600px, 40px 40px, 40px 40px;
-    animation: tech-grid 20s linear infinite;
+      radial-gradient(circle at 25% 25%, rgba(0, 192, 184, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0, 192, 184, 0.1) 0%, transparent 50%),
+      linear-gradient(90deg, rgba(0, 192, 184, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(0, 192, 184, 0.05) 1px, transparent 1px);
+    background-size: 800px 800px, 600px 600px, 60px 60px, 60px 60px;
+    animation: tech-grid-flow 25s linear infinite;
   }
 
   .glow-text {
@@ -179,7 +219,9 @@
   /* Seções com gradientes */
   .hero-section {
     @apply relative overflow-hidden;
-    background: linear-gradient(135deg, #02131d 0%, #0a1a2a 30%, #02131d 100%);
+    background: 
+      radial-gradient(ellipse at top, rgba(0, 192, 184, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #02131d 0%, #0a1a2a 30%, #02131d 100%);
   }
 
   .hero-section::before {
@@ -205,7 +247,10 @@
 
   /* Novos efeitos inovadores */
   .text-glow {
-    text-shadow: 0 0 20px rgba(0, 192, 184, 0.5), 0 0 40px rgba(0, 192, 184, 0.3);
+    text-shadow: 
+      0 0 10px rgba(0, 192, 184, 0.5), 
+      0 0 20px rgba(0, 192, 184, 0.3),
+      0 0 30px rgba(0, 192, 184, 0.2);
   }
 
   .glass-effect {
@@ -213,11 +258,11 @@
   }
 
   .floating-elements {
-    animation: float-random 6s ease-in-out infinite;
+    animation: float-enhanced 8s ease-in-out infinite;
   }
 }
 
-/* Animações personalizadas */
+/* Animações personalizadas aprimoradas */
 @keyframes pulse-glow {
   0%, 100% { 
     box-shadow: 0 0 20px rgba(0, 192, 184, 0.3);
@@ -262,6 +307,53 @@
   100% { backgroundPosition: '100% 100%'; }
 }
 
+@keyframes tech-grid-flow {
+  0% { 
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; 
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% { 
+    background-position: 100% 100%, -100% -100%, 60px 60px, 60px 60px; 
+    opacity: 0.3;
+  }
+}
+
+@keyframes floating-orbs {
+  0% { 
+    transform: translateY(0px) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% { 
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes float-enhanced {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: translateY(-15px) rotate(1deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-20px) rotate(-1deg);
+    opacity: 0.8;
+  }
+}
+
 /* Melhorias de tipografia */
 h1, h2, h3, h4, h5, h6 {
   @apply font-display;
@@ -269,6 +361,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-gradient {
   @apply bg-gradient-to-r from-white via-brand-accent to-white bg-clip-text text-transparent;
+  background-size: 200% auto;
+  animation: gradient-flow 3s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 /* Responsividade aprimorada */
