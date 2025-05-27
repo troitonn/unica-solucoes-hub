@@ -67,9 +67,7 @@ const Hero = () => {
             </h2>
             <div className="flex items-center justify-center gap-2 text-[#18d7af]">
               <Users className="h-4 w-4" />
-              <span className="font-medium text-base">
-                Mais de 500 empresas confiam em nós
-              </span>
+              <span className="font-medium text-base">Mais de 200 empresas confiam em nós</span>
             </div>
           </div>
         </div>
