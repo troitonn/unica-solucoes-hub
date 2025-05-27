@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Clock, TrendingUp, Shield, Users } from "lucide-react";
-
 const PontoEletronicoSection = () => {
-  return (
-    <section className="py-16 bg-[#01222e] relative">
+  return <section className="py-16 relative bg-transparent">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Conteúdo à esquerda */}
@@ -69,14 +66,10 @@ const PontoEletronicoSection = () => {
 
             {/* CTA */}
             <div className="pt-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                onClick={() => {
-                  const message = encodeURIComponent("Olá! Quero saber mais sobre o Ponto Eletrônico da Única Soluções!");
-                  window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
-                }}
-              >
+              <Button size="lg" className="bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300" onClick={() => {
+              const message = encodeURIComponent("Olá! Quero saber mais sobre o Ponto Eletrônico da Única Soluções!");
+              window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
+            }}>
                 QUERO MEU PONTO ELETRÔNICO
               </Button>
             </div>
@@ -86,17 +79,11 @@ const PontoEletronicoSection = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#18d7af]/20 to-[#20c997]/20 rounded-full blur-3xl animate-pulse-slow"></div>
-              <img
-                src="/lovable-uploads/6c909e8a-dc6d-41ff-a03d-578cfdd8c690.png"
-                alt="Ponto Eletrônico - Controle iD"
-                className="relative z-10 max-w-full h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
-              />
+              <img src="/lovable-uploads/6c909e8a-dc6d-41ff-a03d-578cfdd8c690.png" alt="Ponto Eletrônico - Controle iD" className="relative z-10 max-w-full h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PontoEletronicoSection;

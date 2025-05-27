@@ -1,7 +1,5 @@
-
 import { AlertTriangle, Clock, CreditCard, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const HighlightSections = () => {
   const highlights = [{
     icon: <AlertTriangle className="h-6 w-6" />,
@@ -28,9 +26,7 @@ const HighlightSections = () => {
     gradient: "from-green-500/10 to-emerald-500/10",
     borderColor: "border-green-500/20"
   }];
-
-  return (
-    <section className="py-20 bg-[#01222e] relative">
+  return <section className="py-20 relative bg-transparent">
       <div className="section-container relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -45,15 +41,10 @@ const HighlightSections = () => {
         </div>
         
         <div className="grid lg:grid-cols-3 gap-6">
-          {highlights.map((highlight, index) => (
-            <div 
-              key={index} 
-              className={`relative p-6 bg-gradient-to-br ${highlight.gradient} backdrop-blur-md rounded-2xl border ${highlight.borderColor} hover:border-[#18d7af]/40 transition-all duration-300 hover:transform hover:scale-105 group`}
-              style={{
-                opacity: 0,
-                animation: `fade-in 0.8s ease-out forwards ${index * 0.2}s`
-              }}
-            >
+          {highlights.map((highlight, index) => <div key={index} className={`relative p-6 bg-gradient-to-br ${highlight.gradient} backdrop-blur-md rounded-2xl border ${highlight.borderColor} hover:border-[#18d7af]/40 transition-all duration-300 hover:transform hover:scale-105 group`} style={{
+          opacity: 0,
+          animation: `fade-in 0.8s ease-out forwards ${index * 0.2}s`
+        }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="text-3xl">{highlight.emoji}</div>
                 <div className="text-[#18d7af]">
@@ -69,22 +60,16 @@ const HighlightSections = () => {
                 {highlight.description}
               </p>
               
-              <Button 
-                className="w-full bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-semibold rounded-full group-hover:shadow-lg transition-all duration-300" 
-                onClick={() => {
-                  const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${highlight.title}`);
-                  window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
-                }}
-              >
+              <Button className="w-full bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-semibold rounded-full group-hover:shadow-lg transition-all duration-300" onClick={() => {
+            const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${highlight.title}`);
+            window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
+          }}>
                 {highlight.cta}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HighlightSections;

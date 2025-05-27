@@ -1,21 +1,14 @@
-
 import { Button } from "@/components/ui/button";
 import { CreditCard, TrendingDown, CheckCircle, AlertCircle } from "lucide-react";
-
 const AuditoriaCartaoSection = () => {
-  return (
-    <section className="py-16 bg-[#01222e] relative">
+  return <section className="py-16 relative bg-transparent">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Imagem à esquerda */}
           <div className="flex justify-center lg:justify-start order-2 lg:order-1">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#18d7af]/20 to-[#20c997]/20 rounded-full blur-3xl animate-pulse-slow"></div>
-              <img
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
-                alt="Auditoria de Cartões - Análise de Taxas"
-                className="relative z-10 w-full max-w-md h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
-              />
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="Auditoria de Cartões - Análise de Taxas" className="relative z-10 w-full max-w-md h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
 
@@ -81,22 +74,16 @@ const AuditoriaCartaoSection = () => {
 
             {/* CTA */}
             <div className="pt-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                onClick={() => {
-                  const message = encodeURIComponent("Olá! Quero fazer uma auditoria das taxas dos meus cartões!");
-                  window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
-                }}
-              >
+              <Button size="lg" className="bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300" onClick={() => {
+              const message = encodeURIComponent("Olá! Quero fazer uma auditoria das taxas dos meus cartões!");
+              window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
+            }}>
                 QUERO AUDITAR MEUS CARTÕES
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AuditoriaCartaoSection;
