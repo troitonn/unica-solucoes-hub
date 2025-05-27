@@ -1,11 +1,8 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Building, Target, Award, Users } from "lucide-react";
-
 const QuemSomos = () => {
-  return (
-    <div className="min-h-screen bg-brand-dark overflow-hidden">
+  return <div className="min-h-screen bg-brand-dark overflow-hidden">
       <div className="fixed inset-0 tech-grid-bg opacity-20 z-0"></div>
       
       <div className="relative z-10">
@@ -71,9 +68,7 @@ const QuemSomos = () => {
               </div>
 
               <div className="text-center bg-gradient-to-r from-brand-accent/10 to-transparent p-8 rounded-2xl border border-brand-accent/20 backdrop-blur-sm">
-                <h3 className="text-2xl font-bold text-gradient mb-4">
-                  Mais de 500 empresas confiam em nós
-                </h3>
+                <h3 className="text-2xl font-bold text-gradient mb-4">Mais de 200 empresas confiam em nós</h3>
                 <p className="text-lg text-gray-300">
                   Se você reconhece a necessidade de reavaliar rotinas dentro da sua organização, deseja manter uma relação mais profissional com seus funcionários e quer garantir que os setores administrativo e financeiro estejam equipados com as melhores ferramentas do mercado, a Única Soluções é para você!
                 </p>
@@ -84,8 +79,6 @@ const QuemSomos = () => {
         
         <Footer />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default QuemSomos;
