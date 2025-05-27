@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import ServicesPreview from "@/components/ServicesPreview";
+import PontoEletronicoSection from "@/components/PontoEletronicoSection";
 import HighlightSections from "@/components/HighlightSections";
 import ServicesSection from "@/components/ServicesSection";
 import SegmentsSection from "@/components/SegmentsSection";
@@ -68,7 +68,9 @@ const Index = () => {
         
         <Hero />
         
-        <ServicesPreview />
+        <div className="animate-on-scroll">
+          <PontoEletronicoSection />
+        </div>
         
         <div className="animate-on-scroll">
           <HighlightSections />
