@@ -5,7 +5,7 @@ const SegmentsSection = () => {
   const segments = [
     "Supermercado",
     "Mercado de Bairro",
-    "Hortifrúti",
+    "Hortifruti",
     "Padaria",
     "Açougue",
     "Bazar",
