@@ -1,11 +1,7 @@
-
 import { Phone, Mail, MapPin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-gradient-to-br from-brand-blue via-brand-blue to-brand-blue/90 text-white pt-16 pb-6 relative overflow-hidden">
+  return <footer className="bg-gradient-to-br from-brand-blue via-brand-blue to-brand-blue/90 text-white pt-16 pb-6 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-brand-green/5 rounded-full blur-3xl"></div>
@@ -16,11 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="mb-6">
-              <img 
-                src="/lovable-uploads/36af4156-5046-46f9-bcf0-89cf8ceff89b.png" 
-                alt="Única Soluções Logo" 
-                className="h-14 w-auto mb-4"
-              />
+              <img src="/lovable-uploads/36af4156-5046-46f9-bcf0-89cf8ceff89b.png" alt="Única Soluções Logo" className="h-14 w-auto mb-4" />
             </div>
             <p className="text-gray-300 mb-4">
               Otimize seus processos com praticidade e segurança, garantindo mais tempo para o seu negócio. Deixe a burocracia com a gente.
@@ -70,13 +62,9 @@ const Footer = () => {
             © {currentYear} Todos os direitos reservados | <a href="#" className="hover:text-brand-green transition-colors">Política de privacidade</a>
           </p>
           
-          <p className="text-sm text-gray-400 mt-2 md:mt-0">
-            Desenvolvido por VMK Digital | Agência de Marketing Digital
-          </p>
+          <p className="text-sm text-gray-400 mt-2 md:mt-0">Desenvolvido por Troiton Projects+</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
