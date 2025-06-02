@@ -27,7 +27,7 @@ const HighlightSections = () => {
     borderColor: "border-green-500/20"
   }];
   return <section className="py-20 relative bg-transparent">
-      <div className="section-container relative z-10">
+      <div className="section-container relative z-10 py-0">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Cada solução é um{" "}
