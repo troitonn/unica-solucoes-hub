@@ -11,8 +11,8 @@ const QuemSomos = () => {
         <section className="pt-24 pb-16">
           <div className="section-container">
             <div className="text-center mb-16">
-              <h1 className="section-title text-gradient">Quem Somos</h1>
-              <p className="section-subtitle">
+              <h1 className="section-title text-gradient text-4xl">Quem Somos</h1>
+              <p className="section-subtitle text-xl">
                 Conheça a história e os valores da Única Soluções
               </p>
             </div>
