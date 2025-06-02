@@ -9,9 +9,9 @@ const QuemSomos = () => {
         <Navbar />
         
         <section className="pt-24 pb-16">
-          <div className="section-container">
+          <div className="section-container py-0">
             <div className="text-center mb-16">
-              <h1 className="section-title text-gradient text-4xl">Quem Somos</h1>
+              
               
             </div>
 
