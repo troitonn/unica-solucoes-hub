@@ -1,31 +1,11 @@
-
 import { Building2 } from "lucide-react";
-
 const SegmentsSection = () => {
-  const segments = [
-    "Supermercado",
-    "Mercado de Bairro",
-    "Hortifruti",
-    "Padaria",
-    "Açougue",
-    "Bazar",
-    "Moda e beleza",
-    "Restaurantes",
-    "Peixaria",
-    "Conveniência",
-    "Sorveterias",
-    "Mercearias",
-    "Cafeterias",
-    "Materiais de construção",
-    "Atacados",
-  ];
-
-  return (
-    <section id="segmentos" className="py-24 relative overflow-hidden">
+  const segments = ["Supermercado", "Mercado de Bairro", "Hortifruti", "Padaria", "Açougue", "Bazar", "Moda e beleza", "Restaurantes", "Peixaria", "Conveniência", "Sorveterias", "Mercearias", "Cafeterias", "Materiais de construção", "Atacados"];
+  return <section id="segmentos" className="relative overflow-hidden py-0">
       {/* Background decorativo */}
-      <div className="absolute inset-0 tech-grid-bg opacity-10"></div>
       
-      <div className="section-container relative z-10">
+      
+      <div className="section-container relative z- py-0">
         {/* Badge da seção */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-accent/10 border border-brand-accent/30 text-brand-accent backdrop-blur-sm">
@@ -36,10 +16,10 @@ const SegmentsSection = () => {
         
         {/* Título e descrição */}
         <div className="text-center mb-16">
-          <h2 className="section-title text-gradient mb-6">
+          <h2 className="section-title text-gradient mb-6 text-4xl">
             Segmentos que já atendemos
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle text-base">
             Nossa tecnologia é adaptável para diversos segmentos de mercado, garantindo soluções 
             personalizadas que atendem às necessidades específicas do seu negócio.
           </p>
@@ -47,18 +27,12 @@ const SegmentsSection = () => {
         
         {/* Grid de segmentos */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
-          {segments.map((segment, index) => (
-            <div 
-              key={index}
-              className="segment-card"
-              style={{ 
-                opacity: 0,
-                animation: `fade-in 0.6s ease-out forwards ${index * 0.05}s`
-              }}
-            >
+          {segments.map((segment, index) => <div key={index} className="segment-card" style={{
+          opacity: 0,
+          animation: `fade-in 0.6s ease-out forwards ${index * 0.05}s`
+        }}>
               <span className="block">{segment}</span>
-            </div>
-          ))}
+            </div>)}
         </div>
         
         {/* Call to action */}
@@ -73,8 +47,6 @@ const SegmentsSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SegmentsSection;
