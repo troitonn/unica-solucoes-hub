@@ -46,7 +46,7 @@ const HighlightSections = () => {
           animation: `fade-in 0.8s ease-out forwards ${index * 0.2}s`
         }}>
               <div className="flex items-center gap-3 mb-4">
-                <div className="text-3xl">{highlight.emoji}</div>
+                
                 <div className="text-[#18d7af]">
                   {highlight.icon}
                 </div>
