@@ -36,7 +36,7 @@ const SegmentsSection = () => {
         </div>
         
         {/* Call to action */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 py-[30px]">
           <div className="inline-block bg-card-gradient border border-brand-accent/20 rounded-2xl p-6 backdrop-blur-sm">
             <p className="text-lg text-gray-300 mb-4">
               Não encontrou seu segmento? Não tem problema!
