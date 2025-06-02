@@ -41,10 +41,10 @@ const HighlightSections = () => {
         </div>
         
         <div className="grid lg:grid-cols-3 gap-6">
-          {highlights.map((highlight, index) => <div key={index} className={`relative p-6 bg-gradient-to-br ${highlight.gradient} backdrop-blur-md rounded-2xl border ${highlight.borderColor} hover:border-[#18d7af]/40 transition-all duration-300 hover:transform hover:scale-105 group`} style={{
+          {highlights.map((highlight, index) => <div key={index} style={{
           opacity: 0,
           animation: `fade-in 0.8s ease-out forwards ${index * 0.2}s`
-        }}>
+        }} className="group flex items-center gap-3 p-4 bg-white/5 backdrop-blur-md rounded-xl border border-[#18d7af]/20 hover:border-[#18d7af]/40 transition-all duration-300 hover:transform hover:scale-105 py-[16px] my-0">
               <div className="flex items-center gap-3 mb-4">
                 <div className="text-3xl">{highlight.emoji}</div>
                 <div className="text-[#18d7af]">
