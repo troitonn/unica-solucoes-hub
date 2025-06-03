@@ -30,11 +30,6 @@ const ServicesPreview = () => {
             return (
               <div
                 key={index}
-                style={{
-                  animation: `fade-in 0.6s ease-out forwards`,
-                  animationDelay: `${index * 0.1}s`,
-                  opacity: 0
-                }}
                 onClick={() => {
                   const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${service.name}`);
                   window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
