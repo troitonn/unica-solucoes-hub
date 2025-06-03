@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, CreditCard, FileCheck, ShoppingCart, FileKey, UserRound, Database, FileArchive } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const ServicesPreview = () => {
+  const [cardsVisible, setCardsVisible] = useState(false);
+  
   const services = [
     { name: "PONTO ELETRÔNICO", icon: Clock, emoji: "⏰" },
     { name: "AUDITORIA DE CARTÕES", icon: CreditCard, emoji: "💳" },
@@ -14,8 +17,35 @@ const ServicesPreview = () => {
     { name: "ARMAZENAMENTO ARQ. FISCAIS", icon: FileArchive, emoji: "📁" }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCardsVisible(true);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -100px 0px"
+      }
+    );
+
+    const section = document.getElementById('services-preview-section');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-16 bg-[#01222e]/50 backdrop-blur-sm relative">
+    <section id="services-preview-section" className="py-16 bg-[#01222e]/50 backdrop-blur-sm relative">
       <div className="section-container">
         {/* Título da seção */}
         <div className="text-center mb-12">
@@ -36,8 +66,10 @@ const ServicesPreview = () => {
                 }}
                 className="group relative bg-white/10 backdrop-blur-md border border-[#18d7af]/30 hover:border-[#18d7af]/60 hover:bg-white/15 rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#18d7af]/20 min-w-[180px] max-w-[200px]"
                 style={{
-                  opacity: 1,
-                  visibility: 'visible'
+                  opacity: cardsVisible ? 1 : 0,
+                  transform: cardsVisible ? 'translateY(0)' : 'translateY(30px)',
+                  transition: `all 0.6s ease-out ${index * 0.1}s`,
+                  visibility: cardsVisible ? 'visible' : 'hidden'
                 }}
               >
                 <div className="text-center">
@@ -61,6 +93,11 @@ const ServicesPreview = () => {
           <Button
             onClick={() => window.open("/servicos", "_self")}
             className="bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
+            style={{
+              opacity: cardsVisible ? 1 : 0,
+              transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.6s ease-out 0.8s'
+            }}
           >
             Ver Todos os Serviços
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
