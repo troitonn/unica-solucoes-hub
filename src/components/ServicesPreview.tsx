@@ -34,7 +34,7 @@ const ServicesPreview = () => {
                   const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${service.name}`);
                   window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
                 }}
-                className="group relative bg-white/10 backdrop-blur-md border border-[#18d7af]/30 hover:border-[#18d7af]/60 hover:bg-white/15 rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#18d7af]/20 min-w-[180px] max-w-[200px]"
+                className="group relative bg-white/10 backdrop-blur-md border border-[#18d7af]/30 hover:border-[#18d7af]/60 hover:bg-white/15 rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#18d7af]/20 min-w-[180px] max-w-[200px] opacity-100"
               >
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
