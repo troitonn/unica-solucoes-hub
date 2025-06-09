@@ -1,7 +1,10 @@
+
 import ServiceCard from "./ServiceCard";
 import { Clock, CreditCard, FileCheck, ShoppingCart, FileKey, UserRound, Database, FileArchive } from "lucide-react";
+import { useMemo, useCallback } from "react";
+
 const ServicesSection = () => {
-  const services = [{
+  const services = useMemo(() => [{
     title: "Relógio e sistema de ponto eletrônico",
     description: "A forma mais precisa e segura na relação do colaborador e empregador é controle seguro da jornada de trabalho. Através do registro eletrônico, biométrico ou facial, mobile ou quisque, garantimos a precisão marcação. Otimize o seu RH!",
     icon: <Clock className="h-8 w-8" />,
@@ -41,10 +44,15 @@ const ServicesSection = () => {
     description: "Você sabia que é obrigatório o armazenamento pelo prazo de 5 anos dos arquivos fiscais, seja o modelo que for, tanto entrada quanto saída? Tenha suas notas, conhecimentos de frete, cupons, e outros documentos de forma rápida es segura!",
     icon: <FileArchive className="h-8 w-8" />,
     imageUrl: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80"
-  }];
-  return <section id="servicos" className="relative overflow-hidden py-0 my-0">
-      
-      
+  }], []);
+
+  const handleServiceClick = useCallback((title: string) => {
+    const message = encodeURIComponent(`Olá! Gostaria de saber mais sobre o serviço "${title}" oferecido pela Única Soluções.`);
+    window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
+  }, []);
+
+  return (
+    <section id="servicos" className="relative overflow-hidden py-0 my-0">
       <div className="section-container py-[20px]">
         <h2 className="section-title">Nossos Serviços</h2>
         <p className="section-subtitle">
@@ -53,16 +61,20 @@ const ServicesSection = () => {
         
         {/* Serviços em fileira - grid responsivo */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {services.map((service, index) => <div key={index} className="service-card group cursor-pointer" style={{
-          opacity: 0,
-          animation: `fade-in 0.6s ease-out forwards ${index * 0.1}s`
-        }} onClick={() => {
-          const message = encodeURIComponent(`Olá! Gostaria de saber mais sobre o serviço "${service.title}" oferecido pela Única Soluções.`);
-          window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
-        }}>
+          {services.map((service, index) => (
+            <div 
+              key={`${service.title}-${index}`} 
+              className="service-card group cursor-pointer opacity-100" 
+              onClick={() => handleServiceClick(service.title)}
+            >
               <div className="relative h-48 overflow-hidden rounded-t-xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/20 to-brand-blue/40 z-10"></div>
-                <img src={service.imageUrl} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img 
+                  src={service.imageUrl} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
                 <div className="absolute top-4 left-4 z-20 bg-brand-accent/90 p-2 rounded-lg text-white">
                   {service.icon}
                 </div>
@@ -80,11 +92,14 @@ const ServicesSection = () => {
                   Saiba mais →
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
       
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent via-brand-blue/5 to-brand-blue/20 z-10"></div>
-    </section>;
+    </section>
+  );
 };
+
 export default ServicesSection;
