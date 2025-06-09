@@ -1,12 +1,9 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MessageSquare, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Contatos = () => {
-  return (
-    <div className="min-h-screen bg-brand-dark overflow-hidden">
+  return <div className="min-h-screen bg-brand-dark overflow-hidden">
       <div className="fixed inset-0 tech-grid-bg opacity-20 z-0"></div>
       
       <div className="relative z-10">
@@ -35,10 +32,7 @@ const Contatos = () => {
                     Fale conosco diretamente pelo WhatsApp para um atendimento rápido e personalizado.
                   </p>
                   
-                  <Button 
-                    className="w-full btn-primary" 
-                    onClick={() => window.open("https://wa.me/5521972145721", "_blank")}
-                  >
+                  <Button className="w-full btn-primary" onClick={() => window.open("https://wa.me/5521972145721", "_blank")}>
                     <MessageSquare className="mr-2 h-4 w-4" />
                     Conversar no WhatsApp
                   </Button>
@@ -71,9 +65,7 @@ const Contatos = () => {
                   <p className="text-gray-300 text-sm mb-2">
                     Para propostas formais e documentação
                   </p>
-                  <p className="text-brand-accent font-semibold text-sm">
-                    contato@unicasolucoes.com.br
-                  </p>
+                  <p className="text-brand-accent font-semibold text-sm">gestao@unica-solucoes.com</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-brand-accent/10 to-transparent border border-brand-accent/20 rounded-2xl p-6 backdrop-blur-sm">
@@ -81,9 +73,7 @@ const Contatos = () => {
                     <MapPin className="h-5 w-5 text-brand-accent" />
                     <h3 className="text-lg font-bold text-white">Localização</h3>
                   </div>
-                  <p className="text-gray-300 text-sm mb-2">
-                    Atendemos todo o estado do Rio de Janeiro
-                  </p>
+                  <p className="text-gray-300 text-sm mb-2">Atendemos Rio de Janeiro e São Paulo</p>
                   <p className="text-brand-accent font-semibold text-sm">
                     Rio de Janeiro, RJ
                   </p>
@@ -105,8 +95,6 @@ const Contatos = () => {
         
         <Footer />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contatos;
