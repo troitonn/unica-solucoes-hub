@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const ServicesPreview = () => {
   const [cardsVisible, setCardsVisible] = useState(false);
+  const [backgroundVisible, setBackgroundVisible] = useState(false);
   
   const services = [
     { name: "PONTO ELETRÔNICO", icon: Clock, emoji: "⏰" },
@@ -22,7 +23,12 @@ const ServicesPreview = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Primeiro mostra os cards
             setCardsVisible(true);
+            // Depois de um pequeno delay, ativa os efeitos de fundo
+            setTimeout(() => {
+              setBackgroundVisible(true);
+            }, 300);
           }
         });
       },
@@ -45,12 +51,35 @@ const ServicesPreview = () => {
   }, []);
 
   return (
-    <section id="services-preview-section" className="py-16 bg-[#01222e]/50 backdrop-blur-sm relative">
+    <section 
+      id="services-preview-section" 
+      className={`py-16 relative transition-all duration-700 ${
+        backgroundVisible ? 'bg-[#01222e]/50 backdrop-blur-sm' : 'bg-transparent'
+      }`}
+    >
       <div className="section-container">
         {/* Título da seção */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-white mb-2">Nossos Serviços</h3>
-          <p className="text-gray-300 text-base mb-8">Soluções completas para seu negócio</p>
+          <h3 
+            className="text-2xl font-bold text-white mb-2"
+            style={{
+              opacity: cardsVisible ? 1 : 0,
+              transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.5s ease-out'
+            }}
+          >
+            Nossos Serviços
+          </h3>
+          <p 
+            className="text-gray-300 text-base mb-8"
+            style={{
+              opacity: cardsVisible ? 1 : 0,
+              transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.5s ease-out 0.1s'
+            }}
+          >
+            Soluções completas para seu negócio
+          </p>
         </div>
 
         {/* Serviços em círculos horizontais melhorados */}
@@ -68,8 +97,7 @@ const ServicesPreview = () => {
                 style={{
                   opacity: cardsVisible ? 1 : 0,
                   transform: cardsVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: `all 0.6s ease-out ${index * 0.1}s`,
-                  visibility: cardsVisible ? 'visible' : 'hidden'
+                  transition: `all 0.6s ease-out ${index * 0.1 + 0.2}s`
                 }}
               >
                 <div className="text-center">
@@ -96,7 +124,7 @@ const ServicesPreview = () => {
             style={{
               opacity: cardsVisible ? 1 : 0,
               transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'all 0.6s ease-out 0.8s'
+              transition: 'all 0.6s ease-out 1s'
             }}
           >
             Ver Todos os Serviços
