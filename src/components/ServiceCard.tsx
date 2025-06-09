@@ -10,23 +10,6 @@ interface ServiceCardProps {
   isReversed?: boolean;
 }
 
-// Skeleton visual enquanto carrega
-export const LoadingServiceCard = () => (
-  <div className="flex flex-col md:flex-row bg-zinc-900 rounded-xl border border-cyan-900/30 shadow-xl mb-12 animate-pulse min-h-[400px]">
-    <div className="md:w-1/2 h-64 bg-zinc-800" />
-    <div className="md:w-1/2 p-8 flex flex-col justify-between">
-      <div>
-        <div className="h-10 w-10 bg-zinc-700 rounded-full mb-6" />
-        <div className="h-6 bg-zinc-700 w-2/3 mb-4 rounded" />
-        <div className="h-4 bg-zinc-700 w-full mb-2 rounded" />
-        <div className="h-4 bg-zinc-700 w-4/5 mb-2 rounded" />
-        <div className="h-4 bg-zinc-700 w-3/4 mb-6 rounded" />
-      </div>
-      <div className="h-10 w-44 bg-zinc-700 rounded" />
-    </div>
-  </div>
-);
-
 const ServiceCard = ({
   title,
   description,
@@ -38,45 +21,45 @@ const ServiceCard = ({
     <div
       className={`min-h-[400px] flex flex-col ${
         isReversed ? "md:flex-row-reverse" : "md:flex-row"
-      } bg-gradient-to-br from-zinc-900 to-black rounded-xl border border-cyan-900/30 shadow-xl shadow-cyan-900/10 overflow-hidden mb-12 transform transition-all duration-500 hover:shadow-cyan-800/20 tech-card-glow`}
+      } bg-gradient-to-br from-zinc-900 to-black rounded-xl border border-cyan-900/30 shadow-xl overflow-hidden mb-12`}
     >
-      <div className="md:w-1/2 overflow-hidden">
-        <div className="h-full flex items-center justify-center transition-transform duration-700 hover:scale-105 relative">
-          {imageUrl ? (
-            <div className="relative w-full h-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/80 via-transparent to-brand-blue/50 mix-blend-overlay z-10" />
-              <img
-                loading="lazy"
-                src={imageUrl}
-                alt={title}
-                className="w-full h-full object-cover filter brightness-75"
-              />
-              <div className="absolute inset-0 bg-tech-pattern opacity-10 z-20" />
-            </div>
-          ) : (
-            <div className="bg-gradient-to-br from-zinc-900 to-brand-blue/20 w-full h-full flex items-center justify-center p-8">
-              <div className="text-brand-green w-32 h-32 tech-icon-glow">
-                {icon}
-              </div>
-            </div>
-          )}
-          <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-brand-green/30 rounded-tr-lg" />
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-brand-green/30 rounded-bl-lg" />
-        </div>
+      {/* Imagem ou Ícone */}
+      <div className="relative md:w-1/2 aspect-[4/3] bg-zinc-800">
+        {imageUrl ? (
+          <>
+            <img
+              src={imageUrl}
+              alt={title}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover brightness-75"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/80 via-transparent to-brand-blue/50 mix-blend-overlay z-10" />
+            <div className="absolute inset-0 bg-tech-pattern opacity-10 z-20" />
+          </>
+        ) : (
+          <div className="flex items-center justify-center w-full h-full p-8 text-brand-green text-6xl">
+            {icon}
+          </div>
+        )}
+        {/* Tech corner accents */}
+        <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-brand-green/30 rounded-tr-lg"></div>
+        <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-brand-green/30 rounded-bl-lg"></div>
       </div>
 
-      <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-between backdrop-blur-sm relative">
+      {/* Conteúdo do Card */}
+      <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-between relative backdrop-blur-sm">
         <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 rounded-full blur-3xl" />
+
         <div className="relative">
-          <div className="inline-flex items-center justify-center bg-gradient-to-br from-brand-blue/20 to-black p-3 rounded-full mb-6 shadow-sm border border-cyan-900/30">
+          <div className="inline-flex items-center justify-center bg-gradient-to-br from-brand-blue/20 to-black p-3 rounded-full mb-6 border border-cyan-900/30">
             <div className="text-cyan-400">{icon}</div>
           </div>
+
           <h3 className="text-2xl font-bold bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent mb-4 tracking-tight">
             {title}
           </h3>
-          <div className="text-gray-400 mb-8">
-            <p className="leading-relaxed">{description}</p>
-          </div>
+
+          <p className="text-gray-400 mb-8 leading-relaxed">{description}</p>
         </div>
 
         <div className="relative z-10">
@@ -87,10 +70,7 @@ const ServiceCard = ({
               const message = encodeURIComponent(
                 `Olá! Gostaria de saber mais sobre o serviço "${title}" oferecido pela Única Soluções.`
               );
-              window.open(
-                `https://wa.me/5521972145721?text=${message}`,
-                "_blank"
-              );
+              window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
             }}
           >
             CONTATO VIA WHATSAPP
@@ -98,6 +78,7 @@ const ServiceCard = ({
           </Button>
         </div>
 
+        {/* Circuito decorativo */}
         <div className="absolute bottom-2 right-2 w-24 h-24 pointer-events-none opacity-30">
           <svg
             viewBox="0 0 100 100"
