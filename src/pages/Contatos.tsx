@@ -74,21 +74,11 @@ const Contatos = () => {
                     <h3 className="text-lg font-bold text-white">Localização</h3>
                   </div>
                   <p className="text-gray-300 text-sm mb-2">Atendemos Rio de Janeiro e São Paulo</p>
-                  <p className="text-brand-accent font-semibold text-sm">
-                    Rio de Janeiro, RJ
-                  </p>
+                  <p className="text-brand-accent font-semibold text-sm">Rio de Janeiro, RJ / São Paulo, SP</p>
                 </div>
               </div>
 
-              <div className="text-center bg-gradient-to-r from-brand-accent/10 to-transparent p-6 rounded-2xl border border-brand-accent/20 backdrop-blur-sm">
-                <h3 className="text-xl font-bold text-gradient mb-3">
-                  Horário de Atendimento
-                </h3>
-                <p className="text-base text-gray-300">
-                  Segunda a Sexta: 8h às 18h<br />
-                  Sábado: 8h às 12h
-                </p>
-              </div>
+              
             </div>
           </div>
         </section>
