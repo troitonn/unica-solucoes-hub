@@ -1,12 +1,14 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, CreditCard, FileCheck, ShoppingCart, FileKey, UserRound, Database, FileArchive } from "lucide-react";
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 const ServicesPreview = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
   
-  const services = useMemo(() => [
+  const services = [
     { name: "PONTO ELETRÔNICO", icon: Clock, emoji: "⏰" },
     { name: "AUDITORIA DE CARTÕES", icon: CreditCard, emoji: "💳" },
     { name: "REVISÃO TRIBUTÁRIA", icon: FileCheck, emoji: "📊" },
@@ -15,7 +17,7 @@ const ServicesPreview = () => {
     { name: "CONFECÇÃO DE CRACHÁS", icon: UserRound, emoji: "🆔" },
     { name: "SANEAMENTO CADASTRAL", icon: Database, emoji: "📋" },
     { name: "ARMAZENAMENTO ARQ. FISCAIS", icon: FileArchive, emoji: "📁" }
-  ], []);
+  ];
 
   const handleServiceClick = useCallback((serviceName: string) => {
     const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${serviceName}`);
@@ -27,11 +29,20 @@ const ServicesPreview = () => {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    // Cleanup function para o observer anterior
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    observerRef.current = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         if (entry?.isIntersecting && !isVisible) {
           setIsVisible(true);
+          // Desconectar observer após primeira ativação para evitar re-renders
+          if (observerRef.current) {
+            observerRef.current.disconnect();
+          }
         }
       },
       {
@@ -40,21 +51,20 @@ const ServicesPreview = () => {
       }
     );
 
-    const section = document.getElementById('services-preview-section');
-    if (section) {
-      observer.observe(section);
+    if (sectionRef.current && observerRef.current) {
+      observerRef.current.observe(sectionRef.current);
     }
 
     return () => {
-      if (section) {
-        observer.unobserve(section);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
       }
     };
   }, [isVisible]);
 
   return (
     <section 
-      id="services-preview-section" 
+      ref={sectionRef}
       className="py-16 bg-[#01222e]/50 backdrop-blur-sm relative"
     >
       <div className="section-container">
