@@ -1,13 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, CreditCard, FileCheck, ShoppingCart, FileKey, UserRound, Database, FileArchive } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 
 const ServicesPreview = () => {
-  const [cardsVisible, setCardsVisible] = useState(false);
-  const [backgroundVisible, setBackgroundVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   
-  const services = [
+  const services = useMemo(() => [
     { name: "PONTO ELETRÔNICO", icon: Clock, emoji: "⏰" },
     { name: "AUDITORIA DE CARTÕES", icon: CreditCard, emoji: "💳" },
     { name: "REVISÃO TRIBUTÁRIA", icon: FileCheck, emoji: "📊" },
@@ -16,25 +15,28 @@ const ServicesPreview = () => {
     { name: "CONFECÇÃO DE CRACHÁS", icon: UserRound, emoji: "🆔" },
     { name: "SANEAMENTO CADASTRAL", icon: Database, emoji: "📋" },
     { name: "ARMAZENAMENTO ARQ. FISCAIS", icon: FileArchive, emoji: "📁" }
-  ];
+  ], []);
+
+  const handleServiceClick = useCallback((serviceName: string) => {
+    const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${serviceName}`);
+    window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
+  }, []);
+
+  const handleViewAllClick = useCallback(() => {
+    window.open("/servicos", "_self");
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Primeiro mostra os cards
-            setCardsVisible(true);
-            // Depois de um pequeno delay, ativa os efeitos de fundo
-            setTimeout(() => {
-              setBackgroundVisible(true);
-            }, 300);
-          }
-        });
+        const entry = entries[0];
+        if (entry?.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
       },
       {
-        threshold: 0.2,
-        rootMargin: "0px 0px -100px 0px"
+        threshold: 0.1,
+        rootMargin: "50px"
       }
     );
 
@@ -48,56 +50,41 @@ const ServicesPreview = () => {
         observer.unobserve(section);
       }
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <section 
       id="services-preview-section" 
-      className={`py-16 relative transition-all duration-700 ${
-        backgroundVisible ? 'bg-[#01222e]/50 backdrop-blur-sm' : 'bg-transparent'
-      }`}
+      className="py-16 bg-[#01222e]/50 backdrop-blur-sm relative"
     >
       <div className="section-container">
         {/* Título da seção */}
         <div className="text-center mb-12">
-          <h3 
-            className="text-2xl font-bold text-white mb-2"
-            style={{
-              opacity: cardsVisible ? 1 : 0,
-              transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'all 0.5s ease-out'
-            }}
-          >
+          <h3 className={`text-2xl font-bold text-white mb-2 transition-all duration-500 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             Nossos Serviços
           </h3>
-          <p 
-            className="text-gray-300 text-base mb-8"
-            style={{
-              opacity: cardsVisible ? 1 : 0,
-              transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'all 0.5s ease-out 0.1s'
-            }}
-          >
+          <p className={`text-gray-300 text-base mb-8 transition-all duration-500 delay-100 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             Soluções completas para seu negócio
           </p>
         </div>
 
-        {/* Serviços em círculos horizontais melhorados */}
+        {/* Serviços em círculos horizontais */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div
-                key={index}
-                onClick={() => {
-                  const message = encodeURIComponent(`Olá! Quero saber mais sobre: ${service.name}`);
-                  window.open(`https://wa.me/5521972145721?text=${message}`, "_blank");
-                }}
-                className="group relative bg-white/10 backdrop-blur-md border border-[#18d7af]/30 hover:border-[#18d7af]/60 hover:bg-white/15 rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#18d7af]/20 min-w-[180px] max-w-[200px]"
+                key={service.name}
+                onClick={() => handleServiceClick(service.name)}
+                className={`group relative bg-white/10 backdrop-blur-md border border-[#18d7af]/30 hover:border-[#18d7af]/60 hover:bg-white/15 rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#18d7af]/20 min-w-[180px] max-w-[200px] ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
                 style={{
-                  opacity: cardsVisible ? 1 : 0,
-                  transform: cardsVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: `all 0.6s ease-out ${index * 0.1 + 0.2}s`
+                  transitionDelay: isVisible ? `${index * 50 + 200}ms` : '0ms'
                 }}
               >
                 <div className="text-center">
@@ -119,12 +106,12 @@ const ServicesPreview = () => {
 
         <div className="text-center">
           <Button
-            onClick={() => window.open("/servicos", "_self")}
-            className="bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
+            onClick={handleViewAllClick}
+            className={`bg-gradient-to-r from-[#18d7af] to-[#20c997] hover:from-[#15c29e] hover:to-[#1bb38a] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500 group ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             style={{
-              opacity: cardsVisible ? 1 : 0,
-              transform: cardsVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'all 0.6s ease-out 1s'
+              transitionDelay: isVisible ? '600ms' : '0ms'
             }}
           >
             Ver Todos os Serviços
