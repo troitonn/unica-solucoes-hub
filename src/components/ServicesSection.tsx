@@ -64,7 +64,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={`${service.title}-${index}`} 
-              className="service-card group cursor-pointer opacity-100" 
+              className="service-card group cursor-pointer" 
               onClick={() => handleServiceClick(service.title)}
             >
               <div className="relative h-48 overflow-hidden rounded-t-xl">
