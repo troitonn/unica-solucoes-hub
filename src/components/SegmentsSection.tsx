@@ -5,7 +5,7 @@ const SegmentsSection = () => {
       {/* Background decorativo */}
       
       
-      <div className="section-container relative z- py-0">
+      <div className="section-container relative z- py-0 my-[69px]">
         {/* Badge da seção */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-accent/10 border border-brand-accent/30 text-brand-accent backdrop-blur-sm">
