@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+
+import { Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gradient-to-br from-brand-blue via-brand-blue to-brand-blue/90 text-white pt-16 pb-6 relative overflow-hidden">
@@ -17,9 +18,37 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               Otimize seus processos com praticidade e segurança, garantindo mais tempo para o seu negócio. Deixe a burocracia com a gente.
             </p>
-            <div className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
+            <div className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors mb-4">
               <Phone size={16} />
               <span>(21) 97214-5721</span>
+            </div>
+            
+            {/* Redes Sociais */}
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.instagram.com/somosaunica/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/somosaunica" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a 
+                href="https://www.facebook.com/somosaunica" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+              >
+                <Facebook size={20} />
+              </a>
             </div>
           </div>
           
