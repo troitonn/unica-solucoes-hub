@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, MessageSquare, Instagram, Linkedin, Facebook } from "lucide-react";
@@ -19,8 +20,10 @@ const Navbar = () => {
 
   const handleNavigation = (href: string) => {
     if (href.startsWith('#')) {
+      // Se é uma âncora, navegar para a página inicial primeiro se não estiver nela
       if (location.pathname !== '/') {
         navigate('/');
+        // Aguardar um pouco para a página carregar antes de fazer o scroll
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {
@@ -28,12 +31,14 @@ const Navbar = () => {
           }
         }, 100);
       } else {
+        // Se já está na página inicial, fazer scroll direto
         const element = document.querySelector(href);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }
     } else {
+      // Navegação normal para outras páginas - sempre rolar para o topo
       navigate(href);
       window.scrollTo(0, 0);
     }
@@ -41,19 +46,34 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: "Início", href: "/" },
-    { name: "Quem Somos", href: "/quem-somos" },
-    { name: "Serviços", href: "/servicos" },
-    { name: "Segmentos", href: "/segmentos" },
-    { name: "Contato", href: "/contatos" }
+    {
+      name: "Início",
+      href: "/"
+    },
+    {
+      name: "Quem Somos",
+      href: "/quem-somos"
+    },
+    {
+      name: "Serviços",
+      href: "/servicos"
+    },
+    {
+      name: "Segmentos",
+      href: "/segmentos"
+    },
+    {
+      name: "Contato",
+      href: "/contatos"
+    }
   ];
 
   return (
     <>
-      {/* ✅ Header corrigido aqui */}
-      <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'modern-navbar py-2' : 'py-4'} ${!scrolled ? 'bg-white/80 backdrop-blur-sm md:bg-transparent' : ''}`}>
+      <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'modern-navbar py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
+            {/* Logo */}
             <div className="flex items-center">
               <button onClick={() => handleNavigation('/')} className="flex-shrink-0 group">
                 <img 
@@ -63,7 +83,7 @@ const Navbar = () => {
                 />
               </button>
             </div>
-
+            
             {/* Desktop Navigation */}
             <div className="hidden md:flex md:items-center md:space-x-8">
               <nav className="flex space-x-8">
@@ -86,8 +106,8 @@ const Navbar = () => {
                 WhatsApp
               </Button>
             </div>
-
-            {/* Mobile Menu Button */}
+            
+            {/* Mobile menu button */}
             <div className="md:hidden">
               <button 
                 type="button" 
@@ -98,8 +118,8 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-
-          {/* Mobile Menu */}
+          
+          {/* Mobile menu */}
           {isOpen && (
             <div className="md:hidden mt-4 pb-4 border-t border-brand-accent/20">
               <div className="px-2 pt-4 space-y-2">
@@ -116,7 +136,7 @@ const Navbar = () => {
                     {item.name}
                   </button>
                 ))}
-
+                
                 <div 
                   className="px-3 py-2" 
                   style={{
@@ -135,7 +155,7 @@ const Navbar = () => {
                     WhatsApp
                   </Button>
                 </div>
-
+                
                 {/* Redes Sociais - Mobile */}
                 <div 
                   className="px-3 py-4 flex justify-center space-x-4" 
@@ -144,13 +164,28 @@ const Navbar = () => {
                     animation: `fade-in 0.3s ease-out forwards 0.4s`
                   }}
                 >
-                  <a href="https://www.instagram.com/somosaunica/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20">
+                  <a 
+                    href="https://www.instagram.com/somosaunica/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+                  >
                     <Instagram size={16} />
                   </a>
-                  <a href="https://www.linkedin.com/company/somosaunica" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20">
+                  <a 
+                    href="https://www.linkedin.com/company/somosaunica" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+                  >
                     <Linkedin size={16} />
                   </a>
-                  <a href="https://www.facebook.com/somosaunica" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20">
+                  <a 
+                    href="https://www.facebook.com/somosaunica" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+                  >
                     <Facebook size={16} />
                   </a>
                 </div>
@@ -160,15 +195,30 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Redes Sociais - Desktop */}
+      {/* Redes Sociais - Desktop - Fora do cabeçalho */}
       <div className="fixed top-20 right-4 z-40 hidden md:flex flex-col space-y-3">
-        <a href="https://www.instagram.com/somosaunica/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10">
+        <a 
+          href="https://www.instagram.com/somosaunica/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
+        >
           <Instagram size={16} />
         </a>
-        <a href="https://www.linkedin.com/company/somosaunica" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10">
+        <a 
+          href="https://www.linkedin.com/company/somosaunica" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
+        >
           <Linkedin size={16} />
         </a>
-        <a href="https://www.facebook.com/somosaunica" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10">
+        <a 
+          href="https://www.facebook.com/somosaunica" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
+        >
           <Facebook size={16} />
         </a>
       </div>
