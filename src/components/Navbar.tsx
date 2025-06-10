@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, MessageSquare } from "lucide-react";
+import { Menu, X, MessageSquare, Instagram, Linkedin, Facebook } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -96,6 +96,34 @@ const Navbar = () => {
               ))}
             </nav>
             
+            {/* Redes Sociais - Desktop */}
+            <div className="flex items-center space-x-3 ml-6">
+              <a 
+                href="https://www.instagram.com/somosaunica/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+              >
+                <Instagram size={18} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/somosaunica" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a 
+                href="https://www.facebook.com/somosaunica" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+              >
+                <Facebook size={18} />
+              </a>
+            </div>
+            
             <Button 
               className="btn-primary ml-4" 
               onClick={() => window.open("https://wa.me/5521972145721", "_blank")}
@@ -134,6 +162,41 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Redes Sociais - Mobile */}
+              <div 
+                className="px-3 py-4 flex justify-center space-x-4" 
+                style={{
+                  opacity: 0,
+                  animation: `fade-in 0.3s ease-out forwards 0.3s`
+                }}
+              >
+                <a 
+                  href="https://www.instagram.com/somosaunica/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/company/somosaunica" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a 
+                  href="https://www.facebook.com/somosaunica" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
+                >
+                  <Facebook size={20} />
+                </a>
+              </div>
+              
               <div 
                 className="px-3 py-2" 
                 style={{
