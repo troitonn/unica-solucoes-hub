@@ -38,8 +38,9 @@ const Navbar = () => {
         }
       }
     } else {
-      // Navegação normal para outras páginas
+      // Navegação normal para outras páginas - sempre rolar para o topo
       navigate(href);
+      window.scrollTo(0, 0);
     }
     setIsOpen(false);
   };
@@ -169,7 +170,7 @@ const Navbar = () => {
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
                   >
-                    <Instagram size={20} />
+                    <Instagram size={16} />
                   </a>
                   <a 
                     href="https://www.linkedin.com/company/somosaunica" 
@@ -177,7 +178,7 @@ const Navbar = () => {
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
                   >
-                    <Linkedin size={20} />
+                    <Linkedin size={16} />
                   </a>
                   <a 
                     href="https://www.facebook.com/somosaunica" 
@@ -185,7 +186,7 @@ const Navbar = () => {
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20"
                   >
-                    <Facebook size={20} />
+                    <Facebook size={16} />
                   </a>
                 </div>
               </div>
@@ -200,25 +201,25 @@ const Navbar = () => {
           href="https://www.instagram.com/somosaunica/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
+          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
         >
-          <Instagram size={20} />
+          <Instagram size={16} />
         </a>
         <a 
           href="https://www.linkedin.com/company/somosaunica" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
+          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
         >
-          <Linkedin size={20} />
+          <Linkedin size={16} />
         </a>
         <a 
           href="https://www.facebook.com/somosaunica" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
+          className="text-gray-300 hover:text-brand-green transition-colors duration-300 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/10"
         >
-          <Facebook size={20} />
+          <Facebook size={16} />
         </a>
       </div>
     </>
