@@ -21,7 +21,7 @@ const ServicesSection = () => {
     imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80"
   }, {
     title: "Sistema de cotação com fornecedores",
-    description: "Automatize o seu processos de compras! Simplifique as cotaçãoes, tenha os melhores preços, históricos, rastreabilidade do processo por inteiro! As compras e cotações coorporativas são processadas por meio de uma plataforma online, prática e segura.",
+    description: "Automatize o seu processo de compras! Simplifique as cotaçãoes, tenha os melhores preços, históricos, rastreabilidade do processo por inteiro! As compras e cotações coorporativas são processadas por meio de uma plataforma online, prática e segura.",
     icon: <ShoppingCart className="h-8 w-8" />,
     imageUrl: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&q=80"
   }, {
