@@ -20,7 +20,7 @@ const Servicos = () => {
     emoji: "📊"
   }, {
     title: "Sistema de cotação com fornecedores",
-    description: "Automatize o seu processos de compras! Simplifique as cotaçãoes, tenha os melhores preços, históricos, rastreabilidade do processo por inteiro! As compras e cotações coorporativas são processadas por meio de uma plataforma online, prática e segura.",
+    description: "Automatize o seu processo de compras! Simplifique as cotaçãoes, tenha os melhores preços, históricos, rastreabilidade do processo por inteiro! As compras e cotações coorporativas são processadas por meio de uma plataforma online, prática e segura.",
     icon: <ShoppingCart className="h-8 w-8" />,
     emoji: "💰"
   }, {
@@ -39,7 +39,7 @@ const Servicos = () => {
     icon: <Database className="h-8 w-8" />,
     emoji: "📋"
   }, {
-    title: "Armazenamento de documento fiscais",
+    title: "Armazenamento de documentos fiscais",
     description: "Você sabia que é obrigatório o armazenamento pelo prazo de 5 anos dos arquivos fiscais, seja o modelo que for, tanto entrada quanto saída? Tenha suas notas, conhecimentos de frete, cupons, e outros documentos de forma rápida es segura!",
     icon: <FileArchive className="h-8 w-8" />,
     emoji: "📁"
