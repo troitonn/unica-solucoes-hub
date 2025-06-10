@@ -62,7 +62,7 @@ const Navbar = () => {
   }];
   return <>
       <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'modern-navbar py-2' : 'bg-transparent py-4'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-brand-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center">
