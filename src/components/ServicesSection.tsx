@@ -40,7 +40,7 @@ const ServicesSection = () => {
     icon: <Database className="h-8 w-8" />,
     imageUrl: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80"
   }, {
-    title: "Armazenamento de documento fiscais",
+    title: "Armazenamento de documentos fiscais",
     description: "Você sabia que é obrigatório o armazenamento pelo prazo de 5 anos dos arquivos fiscais, seja o modelo que for, tanto entrada quanto saída? Tenha suas notas, conhecimentos de frete, cupons, e outros documentos de forma rápida es segura!",
     icon: <FileArchive className="h-8 w-8" />,
     imageUrl: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80"
