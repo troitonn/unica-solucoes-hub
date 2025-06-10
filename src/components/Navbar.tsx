@@ -96,10 +96,10 @@ const Navbar = () => {
           {/* Mobile menu */}
           {isOpen && <div className="md:hidden mt-4 pb-4 border-t border-brand-accent/20">
               <div className="px-2 pt-4 space-y-2">
-                {navItems.map((item, index) => <button key={item.name} onClick={() => handleNavigation(item.href)} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/5 rounded-lg transition-all duration-300" style={{
+                {navItems.map((item, index) => <button key={item.name} onClick={() => handleNavigation(item.href)} style={{
               opacity: 0,
               animation: `fade-in 0.3s ease-out forwards ${index * 0.1}s`
-            }}>
+            }} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-brand-accent rounded-lg transition-all duration-300 bg-brand-dark">
                     {item.name}
                   </button>)}
                 
