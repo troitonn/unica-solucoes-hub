@@ -64,7 +64,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={`${service.title}-${index}`} 
-              className="bg-white/5 backdrop-blur-md border border-[#18d7af]/10 rounded-2xl overflow-hidden shadow-xl cursor-pointer" 
+              className="service-card group cursor-pointer" 
               onClick={() => handleServiceClick(service.title)}
             >
               <div className="relative h-48 overflow-hidden rounded-t-xl">
@@ -72,7 +72,7 @@ const ServicesSection = () => {
                 <img 
                   src={service.imageUrl} 
                   alt={service.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
                 />
                 <div className="absolute top-4 left-4 z-20 bg-brand-accent/90 p-2 rounded-lg text-white">
@@ -81,14 +81,14 @@ const ServicesSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-lg font-bold text-white mb-3">
+                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed line-clamp-4">
                   {service.description}
                 </p>
                 
-                <div className="mt-4 text-brand-accent text-sm font-medium">
+                <div className="mt-4 text-brand-accent text-sm font-medium group-hover:underline">
                   Saiba mais →
                 </div>
               </div>
